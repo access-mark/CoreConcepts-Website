@@ -30,15 +30,10 @@ body {
 
 /* === Logo (global) === */
 .logo {
-  height: clamp(130px, 17.3vw, 216px);
+  height: clamp(175px, 25vw, 240px);
   width: auto;
   position: relative;
   z-index: 1001;
-}
-
-/* === Homepage Logo Override === */
-.banner-container .logo {
-  height: clamp(175px, 25vw, 240px);
 }
 
 /* === Header & Navigation === */
