@@ -38,7 +38,7 @@ body {
 
 /* === Homepage Logo Override === */
 .banner-container .logo {
-  height: clamp(130px, 17.3vw, 216px);
+  height: clamp(150px, 18vw, 220px);
 }
 
 /* === Header & Navigation === */
