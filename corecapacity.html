@@ -11,11 +11,16 @@
       background-color: #000;
       color: #00FFFF;
     }
-    /* Banner styling */
-    .small-banner,
+
+    /* Banner styling: black background, remove any background image */
+    .small-banner {
+      background-color: #000;
+      background-image: none !important;
+    }
     .banner-header {
       background-color: #000;
     }
+
     /* Headings and paragraphs */
     .page-title,
     h2,
@@ -23,6 +28,7 @@
     li {
       color: #00FFFF;
     }
+
     /* Navigation links */
     .nav-btn {
       color: #00FFFF;
@@ -30,6 +36,7 @@
     .nav-btn.active {
       border-bottom: 2px solid #00FFFF;
     }
+
     /* Call-to-action button */
     .btn-primary {
       background-color: #00FFFF;
@@ -38,6 +45,18 @@
     }
     .btn-primary:hover {
       opacity: 0.8;
+    }
+
+    /* Footer override: black background and luminant link color */
+    footer {
+      background-color: #000 !important;
+    }
+    footer a {
+      color: #00FFFF !important;
+    }
+    /* Remove inline white backgrounds on social icons */
+    footer a[style] {
+      background: none !important;
     }
   </style>
 </head>
