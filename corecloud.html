@@ -3,13 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>CoreCloud – AWS Strategy & Execution Broker</title>
+  <title>CoreCloud – AWS Strategy &amp; Execution Broker</title>
   <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
 <body>
-
-  <!-- Banner + Header overlay -->
-  <div class="small-banner">
+  <!-- Small-Banner + Header overlay with inline clamp and banner image -->
+  <div
+    class="small-banner"
+    style="
+      height: clamp(175px, 50vh, 550px);
+      background-image: url('assets/images/corecloud-bannerimage.png');
+      background-size: cover;
+      background-position: center center;
+    "
+  >
     <header class="banner-header">
       <img src="assets/images/corecloud-logo.png" alt="CoreCloud Logo" class="logo" />
       <nav>
