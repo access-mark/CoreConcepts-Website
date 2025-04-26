@@ -8,14 +8,22 @@
 </head>
 <body>
 
-  <!-- Banner + Header overlay -->
-  <div class="small-banner">
+  <!-- Banner + Header overlay with inline banner image -->
+  <div
+    class="small-banner"
+    style="
+      height: clamp(175px, 50vh, 550px);
+      background-image: url('assets/images/coretech-bannerimage.png');
+      background-size: cover;
+      background-position: center center;
+    "
+  >
     <header class="banner-header">
-      <img src="assets/images/coretech-logo.png" alt="Coretech-Logo" class="logo" />
+      <img src="assets/images/coretech-logo.png" alt="CoreTech Logo" class="logo" />
       <nav>
         <ul>
           <li><a href="index.html" class="nav-btn">Home</a></li>
-          <li><a href="divisions.html" class="nav-btn">Divisions</a></li>
+          <li><a href="divisions.html" class="nav-btn">The Collective</a></li>
           <li><a href="corecloud.html" class="nav-btn">CoreCloud</a></li>
           <li><a href="coretech.html" class="nav-btn active">CoreTech</a></li>
           <li><a href="corecapacity.html" class="nav-btn">CoreCapacity</a></li>
@@ -50,7 +58,7 @@
         <section class="body-block leadership-block">
           <h2>Elevate Your Infrastructure Today</h2>
           <p>
-            Let’s architect a secure, high-performance network that scales with your ambitions.  
+            Let’s architect a secure, high-performance network that scales with your ambitions.
             Partner with CoreTech &amp; Dell EMC for an end-to-end, fully managed solution.
           </p>
           <a href="contact.html" class="btn-primary">Request Your Infrastructure Audit</a>
@@ -68,6 +76,5 @@
         document.getElementById("site-footer").outerHTML = html;
       });
   </script>
-
 </body>
 </html>
