@@ -39,21 +39,26 @@ body {
 /* === Header & Navigation === */
 header.banner-header {
   position: absolute;
-  top: 0; left: 0; right: 0;
+  top: 0;
+  left: 0;
+  right: 0;
   height: 4rem;
   z-index: 1000;
 }
 header.banner-header .logo {
   position: absolute;
-  top: 1rem; left: 2rem;
+  top: 1rem;
+  left: 2rem;
 }
 header.banner-header nav {
   position: absolute;
-  top: 1rem; right: 2rem;
+  top: 1rem;
+  right: 2rem;
 }
 header.banner-header nav ul {
   list-style: none;
   display: flex;
+  flex-direction: column;
   gap: 0.5rem;
 }
 header.banner-header nav ul li a.nav-btn {
@@ -80,7 +85,7 @@ header.banner-header nav ul li a.nav-btn.active {
   border-color: var(--color-accent);
 }
 
-/* === Banner Container & Image === */
+/* === Banner Container & Image for Home === */
 .banner-container {
   position: relative;
   width: 100%;
@@ -89,8 +94,10 @@ header.banner-header nav ul li a.nav-btn.active {
 }
 .banner-img {
   position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   object-position: top center;
 }
@@ -103,26 +110,20 @@ header.banner-header nav ul li a.nav-btn.active {
   color: var(--color-white);
   text-shadow: 0 4px 8px rgba(0,0,0,0.6);
   position: absolute;
-  top: 25%; left: 50%;
+  top: 25%;
+  left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
   z-index: 500;
   padding: 0 1.5rem;
 }
 
-/* === Banner Text Specifics === */
-.banner-text p {
-  font-size: clamp(1rem, 2.5vw, 1.25rem);
-  margin-bottom: 1.5rem;
-  max-width: 700px;
-}
-
-/* === Small-Banner for Sub-Pages === */
+/* === Sub-Page Banners === */
 .small-banner {
   position: relative;
   width: 100%;
-  height: clamp(300px, 50vh, 600px) !important;
-  overflow: hidden;
+  height: 200px !important;
+  overflow: visible !important;
   background: url('../images/sandton-dusk.png') no-repeat top center;
   background-size: cover;
   display: flex;
