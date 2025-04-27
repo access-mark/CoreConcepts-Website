@@ -81,7 +81,7 @@ header.banner-header nav ul li a.nav-btn.active {
   border-color: var(--color-accent);
 }
 
-/* === Banner Container & Image (Homepage) === */
+/* === Banner Container & Image === */
 .banner-container {
   position: relative;
   width: 100%;
@@ -122,7 +122,7 @@ header.banner-header nav ul li a.nav-btn.active {
 .small-banner {
   position: relative;
   width: 100%;
-  height: 175px !important;
+  height: 200px !important;  /* Fixed height of 200px for all subpages */
   overflow: hidden;
   background: url('../images/sandton-dusk.png') no-repeat top center;
   background-size: cover;
