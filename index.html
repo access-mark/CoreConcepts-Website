@@ -7,7 +7,6 @@
   <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
 <body>
-
   <!-- Banner + Header overlay -->
   <div class="banner-container">
     <img
@@ -15,7 +14,6 @@
       alt="CoreCloud Sandton Skyline Banner"
       class="banner-img"
     />
-
     <header class="banner-header">
       <img
         src="assets/images/coreconcepts-logo.png"
@@ -25,14 +23,13 @@
       <nav>
         <ul>
           <li><a href="index.html" class="nav-btn active">Home</a></li>
-          <li><a href="divisions.html" class="nav-btn">Divisions</a></li>
+          <li><a href="divisions.html" class="nav-btn">The Collective</a></li>
           <li><a href="about.html" class="nav-btn">About</a></li>
           <li><a href="contact.html" class="nav-btn">Contact</a></li>
           <li><a href="downloads.html" class="nav-btn btn-download">Downloads</a></li>
         </ul>
       </nav>
     </header>
-
     <div class="banner-text">
       <h1>Modern IT. Re-imagined.</h1>
       <p>
@@ -65,12 +62,42 @@
   <section class="body-block services-block">
     <h2>How We Deliver</h2>
     <div class="service-grid">
-      <a href="corecloud.html"    class="card"><h3>CoreCloud</h3><p>Cloud strategy, migration & management—scalable, resilient platforms.</p></a>
-      <a href="coretech.html"     class="card"><h3>CoreTech</h3><p>Hybrid infrastructure & managed networks for 24×7 uptime.</p></a>
-      <a href="corecapacity.html" class="card"><h3>CoreCapacity</h3><p>Elite talent & delivery teams on demand—accelerate your roadmap.</p></a>
-      <a href="coreai.html"       class="card"><h3>CoreAI</h3><p>Data science, automation & AI—turn insights into competitive advantage.</p></a>
-      <a href="corefin.html"      class="card"><h3>CoreFin</h3><p>OPEX financing & partner enablement—unlock growth without CAPEX.</p></a>
-      <a href="coredev.html"      class="card"><h3>CoreDev</h3><p>Software development partnerships—engineered by leading experts.</p></a>
+      <a href="corecloud.html" class="card">
+        <h3>CoreCloud</h3>
+        <p>Cloud strategy, migration &amp; management—scalable, resilient platforms.</p>
+      </a>
+      <a href="coretech.html" class="card">
+        <h3>CoreTech</h3>
+        <p>Hybrid infrastructure &amp; managed networks for 24×7 uptime.</p>
+      </a>
+      <a href="corecapacity.html" class="card">
+        <h3>CoreCapacity</h3>
+        <p>Elite talent &amp; delivery teams on demand—accelerate your roadmap.</p>
+      </a>
+      <a href="coreai.html" class="card">
+        <h3>CoreAI</h3>
+        <p>Data science, automation &amp; AI—turn insights into competitive advantage.</p>
+      </a>
+      <a href="corefin.html" class="card">
+        <h3>CoreFin</h3>
+        <p>OPEX financing &amp; partner enablement—unlock growth without CAPEX.</p>
+      </a>
+      <a href="coredev.html" class="card">
+        <h3>CoreDev</h3>
+        <p>Software development partnerships—engineered by leading experts.</p>
+      </a>
+      <a href="coreflux.html" class="card">
+        <h3>CoreFlux</h3>
+        <p>Real-time integration &amp; data flow orchestration.</p>
+      </a>
+      <a href="corecareer.html" class="card">
+        <h3>CoreCareer</h3>
+        <p>Talent management &amp; career development solutions.</p>
+      </a>
+      <a href="coresec.html" class="card">
+        <h3>CoreSec</h3>
+        <p>Cybersecurity &amp; risk management—protecting your business end-to-end.</p>
+      </a>
     </div>
   </section>
 
@@ -79,8 +106,9 @@
   <script>
     fetch("footer.html")
       .then(res => res.text())
-      .then(html => { document.getElementById("site-footer").outerHTML = html });
+      .then(html => {
+        document.getElementById("site-footer").outerHTML = html;
+      });
   </script>
-
 </body>
 </html>
