@@ -54,7 +54,6 @@ header.banner-header nav {
 header.banner-header nav ul {
   list-style: none;
   display: flex;
-  flex-direction: column;
   gap: 0.5rem;
 }
 header.banner-header nav ul li a.nav-btn {
@@ -118,11 +117,11 @@ header.banner-header nav ul li a.nav-btn.active {
   max-width: 700px;
 }
 
-/* === Small-Banner for Sub-Pages (Fixed Height) === */
+/* === Small-Banner for Sub-Pages === */
 .small-banner {
   position: relative;
   width: 100%;
-  height: 200px !important;       /* Fixed 200px height for all subpage banners */
+  height: clamp(300px, 50vh, 600px) !important;
   overflow: hidden;
   background: url('../images/sandton-dusk.png') no-repeat top center;
   background-size: cover;
@@ -175,4 +174,71 @@ header.banner-header nav ul li a.nav-btn.active {
   flex-direction: column;
   text-align: center;
   box-shadow: 0 8px 24px rgba(0,0,0,0.2), 0 4px 12px rgba(0,0,0,0.15);
-  transition: transform 0.3s ease, box-shadow 0.3s eas...
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 48px rgba(0,0,0,0.25), 0 8px 24px rgba(0,0,0,0.20);
+}
+
+/* === Call-to-Action Buttons === */
+.btn-primary {
+  background: var(--color-primary);
+  color: var(--color-white);
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+  margin: 0 auto;
+  transition: all 0.3s ease;
+}
+.btn-primary:hover {
+  background: var(--color-hover);
+  transform: scale(1.04);
+}
+
+/* === Footer === */
+footer {
+  background: #001f3f;
+  color: var(--color-white);
+  padding: 2rem 1.5rem;
+  text-align: center;
+  font-size: 0.95rem;
+}
+footer a {
+  color: var(--color-accent);
+  text-decoration: none;
+  font-weight: 500;
+}
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* === Responsive Fixes === */
+@media (max-width: 768px) {
+  header.banner-header nav ul {
+    gap: 0.75rem;
+  }
+  .banner-text h1,
+  .small-banner .page-title {
+    font-size: clamp(1.8rem, 8vw, 2.5rem);
+  }
+  .body-block h2 {
+    font-size: 1.5rem;
+  }
+  .card {
+    padding: 1.5rem;
+  }
+  .btn-primary {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.95rem;
+  }
+}
+
+/* === Center All Bottom CTA Buttons on Subpages === */
+.body-block .btn-primary {
+  display: block;
+  margin: 2rem auto 0;
+  text-align: center;
+}
