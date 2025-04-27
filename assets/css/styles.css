@@ -107,8 +107,8 @@ header.banner-header nav ul li a.nav-btn.active {
 .small-banner .page-title {
   font-size: clamp(2.2rem, 5.5vw, 3.85rem);   /* 10% larger */
   margin-bottom: 0.75rem;
-  color: #00FFFF;                            /* luminescent logo color */
-  text-shadow: 0 2px 4px rgba(255, 255, 255, 0.8); /* white glow */
+  color: var(--color-primary);                /* page blue */
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.9); /* bright white glow */
   position: absolute;
   top: 25%; left: 50%;
   transform: translate(-50%, -50%);
@@ -127,8 +127,8 @@ header.banner-header nav ul li a.nav-btn.active {
 .small-banner {
   position: relative;
   width: 100%;
-  height: clamp(300px, 50vh, 600px) !important; /* updated for larger banners */
-  overflow: visible !important;                /* allow vertical nav to show */
+  height: clamp(300px, 50vh, 600px) !important; /* larger banners */
+  overflow: visible !important;                /* allow vertical nav */
   background: url('../images/sandton-dusk.png') no-repeat top center;
   background-size: cover;
   display: flex;
@@ -178,4 +178,67 @@ header.banner-header nav ul li a.nav-btn.active {
 }
 .card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 16px 48px rgba(0,0,0,0.25), 0 [Message clipped]
+  box-shadow: 0 16px 48px rgba(0,0,0,0.25), 0 8px 24px rgba(0,0,0,0.20);
+}
+
+/* === Call-to-Action Buttons === */
+.btn-primary {
+  background: var(--color-primary);
+  color: var(--color-white);
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+  margin: 0 auto;
+  transition: all 0.3s ease;
+}
+.btn-primary:hover {
+  background: var(--color-hover);
+  transform: scale(1.04);
+}
+
+/* === Footer === */
+footer {
+  background: #001f3f;
+  color: var(--color-white);
+  padding: 2rem 1.5rem;
+  text-align: center;
+  font-size: 0.95rem;
+}
+footer a {
+  color: var(--color-accent);
+  text-decoration: none;
+  font-weight: 500;
+}
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* === Responsive Fixes === */
+@media (max-width: 768px) {
+  header.banner-header nav ul {
+    gap: 0.75rem;
+  }
+  .banner-text h1,
+  .small-banner .page-title {
+    font-size: clamp(1.8rem, 8vw, 2.5rem);
+  }
+  .body-block h2 {
+    font-size: 1.5rem;
+  }
+  .card {
+    padding: 1.5rem;
+  }
+  .btn-primary {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.95rem;
+  }
+}
+
+/* === Center CTA Buttons on Subpages === */
+.body-block .btn-primary {
+  display: block;
+  margin: 2rem auto 0;
+  text-align: center;
+}
