@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CoreSec – Cybersecurity &amp; Risk Management</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <!-- Small-Banner + Header overlay with inline clamp and banner image -->
+  <div
+    class="small-banner"
+    style="
+      height: clamp(175px, 50vh, 550px);
+      background-image: url('assets/images/coresec-bannerimage.png');
+      background-size: cover;
+      background-position: center center;
+    "
+  >
+    <header class="banner-header">
+      <img src="assets/images/coresec-logo.png" alt="CoreSec Logo" class="logo" />
+      <nav>
+        <ul>
+          <li><a href="index.html" class="nav-btn">Home</a></li>
+          <li><a href="divisions.html" class="nav-btn">The Collective</a></li>
+          <li><a href="corecloud.html" class="nav-btn">CoreCloud</a></li>
+          <li><a href="coretech.html" class="nav-btn">CoreTech</a></li>
+          <li><a href="corecapacity.html" class="nav-btn">CoreCapacity</a></li>
+          <li><a href="coreai.html" class="nav-btn">CoreAI</a></li>
+          <li><a href="corefin.html" class="nav-btn">CoreFin</a></li>
+          <li><a href="coredev.html" class="nav-btn">CoreDev</a></li>
+          <li><a href="coreflux.html" class="nav-btn">CoreFlux</a></li>
+          <li><a href="corecareer.html" class="nav-btn">CoreCareer</a></li>
+          <li><a href="coresec.html" class="nav-btn active">CoreSec</a></li>
+          <li><a href="contact.html" class="nav-btn">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <h1 class="page-title">CoreSec</h1>
+  </div>
+
+  <!-- Executive Overview -->
+  <section class="body-block">
+    <h2>Comprehensive Cybersecurity &amp; Risk Services</h2>
+    <p>CoreSec protects your organization end-to-end with:</p>
+    <ul style="max-width:800px; margin:1rem auto 0; padding-left:1.5rem; text-align:left;">
+      <li><strong>24/7 Threat Monitoring:</strong> Continuous SIEM and SOC operations to detect and respond fast.</li>
+      <li><strong>Vulnerability Management:</strong> Regular scanning, pen-testing, and patch orchestration.</li>
+      <li><strong>Incident Response:</strong> Rapid containment, forensics, and recovery support.</li>
+      <li><strong>Compliance &amp; Governance:</strong> ISO, NIST, and POPIA alignment with audit-ready reporting.</li>
+      <li><strong>Threat Intelligence:</strong> Proactive insights to stay ahead of emerging attack vectors.</li>
+    </ul>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="body-block">
+    <h2>Secure Your Business Today</h2>
+    <p>Don’t wait for a breach—let’s architect a security posture that keeps you ahead of threats.</p>
+    <a href="contact.html" class="btn-primary">Schedule a Security Assessment</a>
+  </section>
+
+  <!-- Footer -->
+  <div id="site-footer"></div>
+  <script>
+    fetch("footer.html")
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById("site-footer").outerHTML = html;
+      });
+  </script>
+</body>
+</html>
