@@ -62,10 +62,11 @@ header.banner-header nav ul {
   gap: 0.5rem;
 }
 header.banner-header nav ul li a.nav-btn {
-  display: inline-flex;
+  display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0.4rem 0.8rem;
+  width: 140px;            /* fixed width for uniform buttons */
+  height: 2.5rem;          /* fixed height for uniform buttons */
   font-size: 0.9rem;
   background: rgba(255,255,255,0.2);
   color: var(--color-white);
