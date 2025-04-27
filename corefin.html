@@ -8,14 +8,22 @@
 </head>
 <body>
 
-  <!-- Banner + Header overlay -->
-  <div class="small-banner">
+  <!-- Banner + Header overlay with inline clamp and banner image -->
+  <div
+    class="small-banner"
+    style="
+      height: clamp(175px, 50vh, 550px);
+      background-image: url('assets/images/corefin-bannerimage.png');
+      background-size: cover;
+      background-position: center center;
+    "
+  >
     <header class="banner-header">
-      <img src="assets/images/corefin-logo.png" alt="Corefin-Logo" class="logo" />
+      <img src="assets/images/corefin-logo.png" alt="CoreFin Logo" class="logo" />
       <nav>
         <ul>
           <li><a href="index.html" class="nav-btn">Home</a></li>
-          <li><a href="divisions.html" class="nav-btn">Divisions</a></li>
+          <li><a href="divisions.html" class="nav-btn">The Collective</a></li>
           <li><a href="corecloud.html" class="nav-btn">CoreCloud</a></li>
           <li><a href="coretech.html" class="nav-btn">CoreTech</a></li>
           <li><a href="corecapacity.html" class="nav-btn">CoreCapacity</a></li>
@@ -47,7 +55,7 @@
   <section class="body-block">
     <h2>Finance Your Innovation</h2>
     <p>
-      Don’t let CapEx constraints slow your digital agenda.  
+      Don’t let CapEx constraints slow your digital agenda.
       Speak with CoreFin to unlock flexible, growth-focused financing today.
     </p>
     <a href="contact.html" class="btn-primary">Request a Finance Consultation</a>
