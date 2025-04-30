@@ -2,7 +2,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="UTF-<!-- coreflux.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CoreFlux – Real-Time Integration &amp; Data Orchestration</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <!-- Banner + Header overlay with banner image -->
+  <div class="small-banner" style="
+      background-image: url('assets/images/sandton-skyline.jpg');
+      background-size: cover;
+      background-position: center;
+      ">
+    <header class="banner-header">
+      <img src="assets/images/coreflux-logo.png" alt="CoreFlux Logo" class="logo" />
+      <nav>
+        <ul>
+          <li><a href="index.html" class="nav-btn">Home</a></li>
+          <li><a href="divisions.html" class="nav-btn">The Collective</a></li>
+          <li><a href="about.html" class="nav-btn active">About</a></li>
+          <li><a href="contact.html" class="nav-btn">Contact</a></li>
+          <li><a href="downloads.html" class="nav-btn btn-download">Downloads</a></li>
+        </ul>
+      </nav>
+    </header>
+    <h1 class="page-title">CoreFlux</h1>
+  </div>
+
+  <!-- Executive Overview -->
+  <section class="body-block">
+    <h2>Orchestrate Your Data Flows in Real Time</h2>
+    <p>CoreFlux delivers seamless integration across your systems, ensuring data moves where it needs to go—instantly.</p>
+    <ul style="max-width:800px; margin:1rem auto 0; padding-left:1.5rem; text-align:left;">
+      <li><strong>100% Event-Driven Pipelines:</strong> Automate triggers and workflows across diverse platforms.</li>
+      <li><strong>Low-Latency Data Sync:</strong> Keep all your applications in lock-step with real-time updates.</li>
+      <li><strong>Scalable Microservices:</strong> Modular connectors to any API, on-prem or in the cloud.</li>
+      <li><strong>End-to-End Monitoring:</strong> Full visibility with built-in dashboards and alerting.</li>
+    </ul>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="body-block">
+    <h2>Drive Seamless Operations</h2>
+    <p>Ready to connect your entire landscape without delay? CoreFlux is your integration engine.</p>
+    <a href="contact.html" class="btn-primary">Schedule an Integration Strategy Call</a>
+  </section>
+
+  <!-- Footer -->
+  <div id="site-footer"></div>
+  <script>
+    fetch("footer.html")
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById("site-footer").outerHTML = html;
+      });
+  </script>
+</body>
+</html>
+8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>CoreFlux – Real-Time Integration &amp; Data Orchestration</title>
   <link rel="stylesheet" href="assets/css/styles.css" />
