@@ -6,14 +6,51 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>CoreFlux – Real-Time Integration &amp; Data Orchestration</title>
   <link rel="stylesheet" href="assets/css/styles.css" />
+  <style>
+    /* Banner wrapper and image styles */
+    .banner-wrapper {
+      position: relative;
+      width: 100%;
+      height: clamp(250px, 40vh, 500px);
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .banner-img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+      z-index: 0;
+    }
+    /* Ensure header and title sit above the image */
+    .banner-header,
+    .page-title {
+      position: relative;
+      z-index: 1;
+    }
+  </style>
 </head>
 <body>
-  <!-- Banner + Header overlay with banner image -->
-  <div class="small-banner" style="
-      background-image: url('assets/images/coreflux-bannerimage.png');
-      background-size: cover;
-      background-position: center;
-      ">
+  <!-- Banner + Header overlay with inline <img> -->
+  <div class="banner-wrapper">
+    <img
+      src="assets/images/coreflux-bannerimage.png"
+      srcset="
+        assets/images/coreflux-bannerimage-small.png 600w,
+        assets/images/coreflux-bannerimage-medium.png 1200w,
+        assets/images/coreflux-bannerimage.png 2400w
+      "
+      sizes="(max-width: 600px) 100vw,
+             (max-width: 1200px) 80vw,
+             1200px"
+      alt="Sandton skyline at dusk"
+      class="banner-img"
+    />
     <header class="banner-header">
       <img src="assets/images/coreflux-logo.png" alt="CoreFlux Logo" class="logo" />
       <nav>
