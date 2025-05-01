@@ -50,51 +50,47 @@
       padding: 3rem 1rem;
     }
     .body-block h2 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
+      font-size: 2rem; margin-bottom: 1rem;
     }
     .body-block p, .body-block ul {
-      line-height: 1.6;
-      margin-bottom: 1.5rem;
+      line-height: 1.6; margin-bottom: 1.5rem;
     }
     .body-block ul { padding-left:1.5rem; }
 
-    /* ---------- BIGGER (16rem) FRAMES ---------- */
+    /* ---------- FRAMES AT 25rem ---------- */
     .framed-left,
     .framed-right {
       position: relative;
-      margin: 2rem auto;   /* auto horizontal centers within max-width */
+      margin: 2rem auto;
       background: #fff;
-      max-width: 1000px;    /* same as .body-block for centering */
+      max-width: 1000px;
     }
     .framed-left {
-      padding: 2rem 1rem 2rem 16rem; /* left padding = 16rem */
+      padding: 2rem 1rem 2rem 25rem; /* left padding = 25rem */
     }
     .framed-left::before {
       content: "";
       position: absolute;
       top: 0; left: 0;
-      width: 16rem;      /* double size */
+      width: 25rem;    /* updated frame width */
       height: 100%;
       background: url('assets/images/frame-left.png') no-repeat center/contain;
       z-index: 1;
     }
-
     .framed-right {
-      padding: 2rem 16rem 2rem 1rem; /* right padding = 16rem */
+      padding: 2rem 25rem 2rem 1rem; /* right padding = 25rem */
     }
     .framed-right::after {
       content: "";
       position: absolute;
       top: 0; right: 0;
-      width: 16rem;      /* double size */
+      width: 25rem;    /* updated frame width */
       height: 100%;
       background: url('assets/images/frame-right.png') no-repeat center/contain;
       z-index: 1;
     }
-
-    /* Text above frames */
-    .framed-left > *, .framed-right > * {
+    .framed-left > *,
+    .framed-right > * {
       position: relative; z-index: 2;
     }
 
