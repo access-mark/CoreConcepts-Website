@@ -6,16 +6,138 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>FluxFrame Pro – Multi-Purpose SimPit | CoreCloud</title>
   <link rel="stylesheet" href="assets/css/styles.css" />
+  <style>
+    /* ----- Dynamic full-bleed banner ----- */
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: #000;
+      color: #eee;
+    }
+    .banner-wrapper {
+      position: relative;
+      left: 50%;
+      right: 50%;
+      margin-left: -50vw;
+      margin-right: -50vw;
+      width: 100vw;
+      height: clamp(250px, 40vh, 500px);
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #000;
+    }
+    .banner-wrapper .banner-img {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: center;
+      z-index: 0;
+    }
+    .banner-header,
+    .page-title {
+      position: relative;
+      z-index: 1;
+      color: #fff;
+      text-shadow: 0 0 10px rgba(0,0,0,0.8);
+    }
+    .banner-header { display: flex; align-items: center; gap: 2rem; }
+    .banner-header .logo { height: 2.5rem; }
+    .banner-header nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 1.5rem;
+    }
+    .banner-header .nav-btn {
+      color: #eee;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .banner-header .nav-btn.active {
+      border-bottom: 2px solid #00FFFF;
+    }
+    .page-title {
+      font-size: 3rem;
+      margin: 0;
+    }
+
+    /* ----- Page content blocks (match other divisions) ----- */
+    .body-block {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 4rem 1rem;
+      text-align: center;
+    }
+    .body-block h2 { font-size: 2rem; margin-bottom: 1rem; }
+    .body-block p { line-height: 1.5; margin-bottom: 1.5rem; }
+    .body-block ul { text-align: left; max-width: 700px; margin: auto; padding-left: 1.5rem; }
+    .body-block li { margin-bottom: 0.75rem; }
+
+    .btn-primary, .btn-secondary {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      border-radius: 0.5rem;
+      text-decoration: none;
+      font-weight: bold;
+      margin: 0.5rem;
+    }
+    .btn-primary {
+      background: #00FFFF;
+      color: #000;
+    }
+    .btn-secondary {
+      background: #FFD700;
+      color: #000;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+      gap: 2rem;
+      align-items: start;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .feature-card {
+      background: rgba(255,255,255,0.05);
+      padding: 1.5rem;
+      border-radius: 0.5rem;
+      text-align: left;
+    }
+
+    .specs-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 2rem;
+    }
+    .specs-table th,
+    .specs-table td {
+      border: 1px solid rgba(255,255,255,0.1);
+      padding: 0.75rem;
+      text-align: left;
+    }
+  </style>
 </head>
 <body>
-  <!-- Banner + Header (matches other division pages) -->
-  <div
-    class="small-banner"
-    style="background-image:url('assets/images/coreflux-bannerimage.png')"
-  >
+  <!-- Banner -->
+  <div class="banner-wrapper">
+    <img
+      src="assets/images/coreflux-bannerimage.png"
+      alt="Sandton skyline at dusk"
+      class="banner-img"
+    />
     <header class="banner-header">
       <img
-        src="assets/images/coreflux-logo.png"
+        src="assets/images/fluxframe-logo.png"
         alt="FluxFrame Pro Logo"
         class="logo"
       />
@@ -23,9 +145,7 @@
         <ul>
           <li><a href="index.html" class="nav-btn">Home</a></li>
           <li><a href="divisions.html" class="nav-btn">The Collective</a></li>
-          <li>
-            <a href="fluxframe.html" class="nav-btn active">SimPit</a>
-          </li>
+          <li><a href="fluxframe.html" class="nav-btn active">SimPit</a></li>
           <li><a href="about.html" class="nav-btn">About</a></li>
           <li><a href="contact.html" class="nav-btn">Contact</a></li>
         </ul>
@@ -34,64 +154,39 @@
     <h1 class="page-title">FluxFrame Pro</h1>
   </div>
 
-  <!-- Executive Overview -->
+  <!-- Content Sections -->
   <section class="body-block">
     <h2>Executive Overview</h2>
     <p>
-      FluxFrame Pro is the next-generation simulation cockpit built for
-      professionals, enterprises, and enthusiasts. With rock-solid stability,
-      tool-free modularity, and full VR/motion readiness, it adapts instantly to
-      flight training, R&amp;D, eSports, and immersive workspaces.
+      FluxFrame Pro is the next-generation sim cockpit for professionals,
+      enterprises, and enthusiasts. With rock-solid stability, tool-free modularity,
+      and full VR/motion readiness, it adapts instantly to training, R&D, eSports,
+      and immersive workspaces.
     </p>
   </section>
 
-  <!-- Expanded Service Breakdown + Case Study -->
   <section class="body-block two-col">
     <div>
       <h3>Expanded Service Breakdown</h3>
       <ul>
-        <li>
-          <strong>Modular Mounting System:</strong> Quick-release rails for
-          yokes, wheels, joysticks, and control panels—swap devices in seconds.
-        </li>
-        <li>
-          <strong>Ergonomic Precision:</strong> Seat height ±200 mm, slide
-          ±300 mm, tilt ±15°—designed for marathon comfort.
-        </li>
-        <li>
-          <strong>Multi-Display Support:</strong> Up to 4× curved ultrawide
-          panels (270°+) plus overhead HUD mount.
-        </li>
-        <li>
-          <strong>Cable Management:</strong> Integrated channels and zip-tie
-          rails keep wiring tidy and out of sight.
-        </li>
-        <li>
-          <strong>VR &amp; Motion Ready:</strong> Pre-wired ports for actuators,
-          tracking sensors, and haptic devices.
-        </li>
-        <li>
-          <strong>Industrial Strength:</strong> 6061-T6 aluminum frame rated to
-          1,000 kg for zero flex under any load.
-        </li>
+        <li><strong>Modular Mounting:</strong> Quick-release rails for yokes, wheels, panels.</li>
+        <li><strong>Ergonomic Precision:</strong> Seat ±200 mm, slide ±300 mm, tilt ±15°.</li>
+        <li><strong>Multi-Display:</strong> Up to 4× curved ultrawides + overhead HUD.</li>
+        <li><strong>Cable Management:</strong> Concealed channels keep cables tidy.</li>
+        <li><strong>VR & Motion:</strong> Pre-wired for actuators and haptic sensors.</li>
+        <li><strong>Industrial Strength:</strong> 1 000 kg-rated 6061-T6 aluminum frame.</li>
       </ul>
     </div>
     <div>
       <h3>Case Study: AeroFlight Academy</h3>
       <p>
-        When AeroFlight integrated FluxFrame Pro into their FAA-certified
-        simulator fleet, trainee performance jumped by 25%—all while
-        eliminating frame flex during intense training cycles.
+        Integrating FluxFrame Pro into their FAA-certified simulators boosted trainee
+        performance by 25% and eliminated frame flex under extreme conditions.
       </p>
-      <a
-        href="case-studies/aeroflight.html"
-        class="btn-primary"
-        >Read Full Case Study</a
-      >
+      <a href="case-studies/aeroflight.html" class="btn-primary">Read Full Case Study</a>
     </div>
   </section>
 
-  <!-- Key Features -->
   <section class="body-block">
     <h2>Key Features</h2>
     <div class="feature-grid">
@@ -101,11 +196,11 @@
       </div>
       <div class="feature-card">
         <h4>Ultra-Wide Displays</h4>
-        <p>Supports up to 4× 34″ curved panels in 270° field of view.</p>
+        <p>Supports 4× 34″ curved panels in a 270° field of view.</p>
       </div>
       <div class="feature-card">
-        <h4>Motion &amp; VR</h4>
-        <p>Seamless integration with motion actuators and VR sensors.</p>
+        <h4>Motion & VR Ready</h4>
+        <p>Seamless integration with actuators and VR sensors.</p>
       </div>
       <div class="feature-card">
         <h4>Cable Routing</h4>
@@ -114,46 +209,20 @@
     </div>
   </section>
 
-  <!-- Technical Specifications -->
   <section class="body-block">
     <h2>Technical Specifications</h2>
     <table class="specs-table">
-      <tr>
-        <th>Frame Material</th>
-        <td>6061-T6 Extruded Aluminum</td>
-      </tr>
-      <tr>
-        <th>Load Capacity</th>
-        <td>1,000 kg (2,200 lbs) static</td>
-      </tr>
-      <tr>
-        <th>Display Mounts</th>
-        <td>4× VESA 75/100 Curved Rails + Overhead HUD</td>
-      </tr>
-      <tr>
-        <th>Seat Adjustment</th>
-        <td>Height ±200 mm, Slide ±300 mm, Tilt ±15°</td>
-      </tr>
-      <tr>
-        <th>Connectivity</th>
-        <td>USB 3.1, CAT6, 12 V Power Daisy-Chain</td>
-      </tr>
-      <tr>
-        <th>Finish</th>
-        <td>Matte Black Powder Coat</td>
-      </tr>
-      <tr>
-        <th>Dimensions (L×W×H)</th>
-        <td>1600 × 1000 × 1400 mm</td>
-      </tr>
-      <tr>
-        <th>Weight</th>
-        <td>45 kg (frame only)</td>
-      </tr>
+      <tr><th>Frame Material</th><td>6061-T6 Aluminum</td></tr>
+      <tr><th>Load Capacity</th><td>1 000 kg static</td></tr>
+      <tr><th>Display Mounts</th><td>4× VESA Curved Rails + HUD</td></tr>
+      <tr><th>Seat Adjust</th><td>Seat ±200 mm, Slide ±300 mm, Tilt ±15°</td></tr>
+      <tr><th>Connectivity</th><td>USB 3.1, CAT6, 12 V daisy-chain</td></tr>
+      <tr><th>Finish</th><td>Matte Black Powder Coat</td></tr>
+      <tr><th>Dimensions</th><td>1600 × 1000 × 500 mm</td></tr>
+      <tr><th>Weight</th><td>45 kg (frame only)</td></tr>
     </table>
   </section>
 
-  <!-- Final Call to Action -->
   <section class="body-block centered">
     <h2>Ready to Elevate Your Simulation?</h2>
     <a href="contact.html" class="btn-primary">Contact Us</a>
@@ -164,8 +233,8 @@
   <div id="site-footer"></div>
   <script>
     fetch("footer.html")
-      .then((res) => res.text())
-      .then((html) => {
+      .then(res => res.text())
+      .then(html => {
         document.getElementById("site-footer").outerHTML = html;
       });
   </script>
