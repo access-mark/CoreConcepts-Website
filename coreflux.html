@@ -8,19 +8,52 @@
   <link rel="stylesheet" href="assets/css/styles.css" />
   <style>
     /* RESET & BASE */
-    html, body { margin:0; padding:0; background:#fff; color:#000; font-family:sans-serif; }
-    a { text-decoration:none; }
-    .btn-primary, .btn-secondary { display:inline-block; padding:.75rem 1.5rem; margin:.5rem; border-radius:.5rem; font-weight:bold; }
-    .btn-primary { background:#00FFFF; color:#000; }
-    .btn-secondary { background:#FFD700; color:#000; }
-    .centered { text-align:center; }
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: #fff;
+      color: #000;
+      font-family: sans-serif;
+    }
+    a {
+      text-decoration: none;
+    }
+    .centered {
+      text-align: center;
+    }
+    /* BUTTONS */
+    .btn-primary,
+    .btn-secondary {
+      display: inline-block;
+      padding: .75rem 1.5rem;
+      margin: .5rem;
+      border-radius: .5rem;
+      font-weight: bold;
+    }
+    .btn-primary {
+      background: #00FFFF;
+      color: #000;
+    }
+    .btn-secondary {
+      background: #FFD700;
+      color: #000;
+    }
 
     /* BODY BLOCKS */
     .body-block {
-      max-width:1000px; margin:0 auto; padding:3rem 1rem; text-align:center;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 3rem 1rem;
+      text-align: center;
     }
-    .body-block h2 { font-size:2rem; margin-bottom:1rem; }
-    .body-block p { line-height:1.6; margin-bottom:1.5rem; }
+    .body-block h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    .body-block p {
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
     .body-block ul {
       list-style: disc;
       margin: 0 auto 1.5rem;
@@ -28,11 +61,76 @@
       display: inline-block;
       text-align: left;
     }
-    .body-block li { margin-bottom:.75rem; }
+    .body-block li {
+      margin-bottom: .75rem;
+    }
+
+    /* HERO BANNER */
+    .banner-wrapper {
+      position: relative;
+      left: 50%;
+      right: 50%;
+      margin-left: -50vw;
+      margin-right: -50vw;
+      width: 100vw;
+      height: clamp(300px, 45vh, 550px);
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .banner-img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      z-index: 0;
+      filter: brightness(0.7);
+    }
+    .banner-header,
+    .page-title {
+      position: relative;
+      z-index: 1;
+    }
+    .banner-header {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+    .banner-header .logo {
+      height: 3rem;
+    }
+    .banner-header nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 1rem;
+    }
+    .banner-header .nav-btn {
+      color: #fff;
+      font-weight: 600;
+      padding-bottom: .25rem;
+    }
+    .banner-header .nav-btn.active {
+      border-bottom: 2px solid #00FFFF;
+    }
+    .page-title {
+      font-size: 3rem;
+      color: #fff;
+      margin: 0;
+      text-shadow: 0 0 10px rgba(0,0,0,0.8);
+    }
 
     /* SERVICE BREAKDOWN IMAGES: identical 25rem square */
     .service-images {
-      display:flex; gap:1rem; justify-content:center; margin-bottom:2rem;
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      margin-bottom: 2rem;
     }
     .service-images img {
       width: 25rem;
@@ -41,38 +139,23 @@
       border: 1px solid #ddd;
       background: #f9f9f9;
     }
-
-    /* rest of your grids, tables, etc… (unchanged) */
-
-    /* HERO BANNER */
-    .banner-wrapper {
-      position:relative; left:50%; right:50%;
-      margin-left:-50vw; margin-right:-50vw;
-      width:100vw; height:clamp(300px,45vh,550px);
-      overflow:hidden; display:flex; align-items:center; justify-content:center;
-    }
-    .banner-img {
-      position:absolute; top:0; left:0;
-      width:100%; height:100%;
-      object-fit:cover; object-position:center; z-index:0;
-      filter: brightness(0.7);
-    }
-    .banner-header, .page-title { position:relative; z-index:1; }
-    .banner-header { display:flex; align-items:center; gap:1.5rem; }
-    .banner-header .logo { height:3rem; }
-    .banner-header nav ul { list-style:none; margin:0; padding:0; display:flex; gap:1rem; }
-    .banner-header .nav-btn { color:#fff; font-weight:600; padding-bottom:.25rem; }
-    .banner-header .nav-btn.active { border-bottom:2px solid #00FFFF; }
-    .page-title { font-size:3rem; color:#fff; margin:0; text-shadow:0 0 10px rgba(0,0,0,0.8); }
   </style>
 </head>
 <body>
 
   <!-- HERO BANNER -->
   <div class="banner-wrapper">
-    <img src="assets/images/coreflux-bannerimage.png" alt="FluxFrame Pro Banner" class="banner-img" />
+    <img
+      src="assets/images/coreflux-bannerimage.png"
+      alt="FluxFrame Pro Banner"
+      class="banner-img"
+    />
     <header class="banner-header">
-      <img src="assets/images/fluxframe-logo.png" alt="FluxFrame Logo" class="logo" />
+      <img
+        src="assets/images/fluxframe-logo.png"
+        alt="FluxFrame Logo"
+        class="logo"
+      />
       <nav>
         <ul>
           <li><a href="index.html" class="nav-btn">Home</a></li>
@@ -90,7 +173,8 @@
   <section class="body-block">
     <h2>More Than a Cockpit—It’s a Movement</h2>
     <p>
-      Step into FluxFrame Pro and experience a SimPit that molds to you—where every control, display, and rail is engineered for peak performance and total immersion.
+      Step into FluxFrame Pro and experience a SimPit that molds to you—where every control,
+      display, and rail is engineered for peak performance and total immersion.
     </p>
   </section>
 
@@ -103,22 +187,24 @@
     <h2>Breakdown of Brilliance</h2>
     <ul>
       <li><strong>Universal Rails:</strong> Military-grade slides for any accessory.</li>
-      <li><strong>ErgoFit:</strong> ±5 mm precision on seat and pedal mounts.</li>
-      <li><strong>Panoramic Vision:</strong> Four 34″ ultrawides for a 270° panorama.</li>
+      <li><strong>ErgoFit System:</strong> Intuitive ±5 mm adjustments for seat and pedals.</li>
+      <li><strong>Surround Vision:</strong> Four 34″ ultrawides for a 270° panorama.</li>
       <li><strong>Cable Concierge:</strong> Hidden channels keep wiring immaculate.</li>
-      <li><strong>Plug & Play:</strong> Pre-wired for VR, motion, and haptics.</li>
-      <li><strong>Global Support:</strong> On-site setup and a 2 year iron-clad warranty.</li>
+      <li><strong>Plug & Play:</strong> Pre-wired for VR, motion actuators, and haptics.</li>
+      <li><strong>Global Support:</strong> On-site setup & a 2-year iron-clad warranty.</li>
     </ul>
   </section>
 
-  <!-- rest of page… -->
+  <!-- ADDITIONAL CONTENT CAN FOLLOW HERE -->
 
   <!-- FOOTER -->
   <div id="site-footer"></div>
   <script>
     fetch("footer.html")
       .then(r => r.text())
-      .then(html => { document.getElementById("site-footer").outerHTML = html; });
+      .then(html => {
+        document.getElementById("site-footer").outerHTML = html;
+      });
   </script>
 </body>
 </html>
