@@ -7,7 +7,7 @@
   <title>FluxFrame Pro – The Ultimate SimPit Story | CoreCloud</title>
   <link rel="stylesheet" href="assets/css/styles.css" />
   <style>
-    /* RESET & BASE */
+    /* ===== RESET & BASE ===== */
     html, body {
       margin: 0; padding: 0;
       background: #fff; color: #000;
@@ -16,25 +16,27 @@
     a { text-decoration: none; color: inherit; }
     ul, ol { margin: 0; padding: 0; list-style: none; }
 
-    /* BUTTONS */
+    /* ===== BUTTONS ===== */
     .btn-primary, .btn-secondary {
       display: inline-block;
       padding: .75rem 1.5rem;
       margin: .5rem;
       border-radius: .5rem;
       font-weight: bold;
+      transition: transform .2s, box-shadow .2s;
     }
     .btn-primary { background: #00FFFF; color: #000; }
     .btn-secondary { background: #FFD700; color: #000; }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 0 12px #00FFFF; }
+    .btn-secondary:hover { transform: translateY(-2px); box-shadow: 0 0 12px #FFD700; }
 
-    /* HERO BANNER */
+    /* ===== HERO BANNER ===== */
     .banner-wrapper {
       position: relative; left: 50%; right: 50%;
       margin-left: -50vw; margin-right: -50vw;
       width: 100vw; height: clamp(300px,45vh,550px);
-      overflow: hidden; display: flex;
-      flex-direction: column; justify-content: space-between;
-      background: #000;
+      overflow: hidden; display: flex; flex-direction: column;
+      justify-content: space-between; background: #000;
     }
     .banner-img {
       position: absolute; top: 0; left: 0;
@@ -44,8 +46,7 @@
     }
     .banner-header {
       position: relative; z-index: 1;
-      display: flex; align-items: flex-start;
-      padding: 1rem 2rem;
+      display: flex; align-items: flex-start; padding: 1rem 2rem;
     }
     .banner-header .coreflux-logo {
       height: 11.25rem; margin-right: 2rem;
@@ -62,8 +63,7 @@
     }
     .banner-content {
       position: relative; z-index: 1;
-      text-align: center; color: #fff;
-      padding: 0 1rem 3rem;
+      text-align: center; color: #fff; padding: 0 1rem 3rem;
     }
     .banner-content h1 {
       font-size: 3rem; margin: .5rem 0;
@@ -74,14 +74,8 @@
       margin: 0 auto 2rem;
       text-shadow: 0 1px 4px rgba(0,0,0,0.8);
     }
-    .banner-content .btn-primary:hover {
-      transform: translateY(-2px); box-shadow: 0 0 12px #00FFFF;
-    }
-    .banner-content .btn-secondary:hover {
-      transform: translateY(-2px); box-shadow: 0 0 12px #FFD700;
-    }
 
-    /* BODY BLOCK – CENTERED TEXT */
+    /* ===== BODY BLOCK ===== */
     .body-block {
       max-width: 1000px; margin: 0 auto; padding: 3rem 1rem;
       text-align: center;
@@ -98,7 +92,19 @@
       line-height: 1.6; margin-bottom: 2rem;
     }
 
-    /* BREAKDOWN GRID */
+    /* ===== SERVICE BREAKDOWN ===== */
+    .service-images {
+      display: flex; gap: 1rem; justify-content: center;
+      margin-bottom: 2rem;
+    }
+    .service-images img {
+      width: 25rem; height: 25rem; object-fit: contain;
+      border: 2px solid #00FFFF; border-radius: .5rem;
+      background: #f9f9f9; transition: transform .2s;
+    }
+    .service-images img:hover { transform: scale(1.05); }
+
+    /* ===== BREAKDOWN GRID ===== */
     .breakdown-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -114,18 +120,76 @@
       border: 2px solid #00FFFF;
     }
 
-    /* SERVICE BREAKDOWN IMAGES */
-    .service-images {
-      display: flex; gap: 1rem; justify-content: center;
-      margin-bottom: 2rem;
+    /* ===== STATS GRID ===== */
+    .stats-grid {
+      display: flex; flex-wrap: wrap;
+      gap: 2rem; justify-content: center;
+      margin: 3rem 0;
     }
-    .service-images img {
-      width: 25rem; height: 25rem; object-fit: contain;
-      border: 2px solid #00FFFF; border-radius: .5rem;
-      background: #f9f9f9; transition: transform .2s;
+    .stat-item {
+      background: #000; color: #fff;
+      padding: 1.5rem; border-radius: .75rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      flex: 1 1 180px;
+      text-align: center;
     }
-    .service-images img:hover {
-      transform: scale(1.05);
+    .stat-item h3 { font-size: 2.5rem; margin: 0; color: #00FFFF; }
+    .stat-item p { margin: .5rem 0 0; }
+
+    /* ===== FEATURE GRID ===== */
+    .feature-grid {
+      display: grid; gap: 1.5rem; margin-top: 2rem;
+      grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+    }
+    .feature-card {
+      background: rgba(0,255,255,0.05);
+      padding: 1.5rem; border-radius: .5rem;
+      text-align: left; transition: transform .2s, box-shadow .2s;
+    }
+    .feature-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+    }
+    .feature-card h4 { margin-top: 0; color: #00FFFF; }
+
+    /* ===== USE CASES GRID ===== */
+    .use-case-grid {
+      display: grid; gap: 1.5rem; margin-top: 2rem;
+      grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+    }
+    .use-case-card {
+      background: rgba(255,215,0,0.05);
+      padding: 1.5rem; border-radius: .5rem;
+      text-align: center; transition: transform .2s, box-shadow .2s;
+    }
+    .use-case-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+    }
+    .use-case-card h3 { margin-top: 0; color: #FFD700; }
+
+    /* ===== TESTIMONIALS ===== */
+    .testimonials blockquote {
+      background: rgba(0,255,255,0.05);
+      border-left: 4px solid #00FFFF;
+      margin: 2rem auto; padding: 1.5rem;
+      max-width: 700px; font-style: italic;
+    }
+    .testimonials cite {
+      display: block; margin-top: 1rem;
+      text-align: right; font-weight: bold;
+      font-style: normal;
+    }
+
+    /* ===== CTA FOOTER ===== */
+    .cta-footer {
+      background: #000; color: #fff;
+      padding: 3rem 1rem; text-align: center;
+      margin-top: 4rem;
+    }
+    .cta-footer h2 {
+      font-size: 2.5rem; margin-bottom: 1rem;
+      color: #00FFFF;
     }
   </style>
 </head>
@@ -135,7 +199,6 @@
   <div class="banner-wrapper">
     <img src="assets/images/coreflux-bannerimage.png" alt="FluxFrame Pro Banner" class="banner-img" />
 
-    <!-- Logo + Vertical Navigation -->
     <div class="banner-header">
       <img src="assets/images/coreflux-logo.png" alt="CoreFlux Logo" class="coreflux-logo" />
       <nav>
@@ -149,13 +212,9 @@
       </nav>
     </div>
 
-    <!-- Headline & CTAs -->
     <div class="banner-content">
       <h1>FluxFrame Pro</h1>
-      <p>
-        Unleash total immersion. Swap gear in seconds. Dominate your simulations
-        with pro-grade precision.
-      </p>
+      <p>Unleash total immersion. Swap gear in seconds. Dominate your simulations with pro-grade precision.</p>
       <a href="#configurator" class="btn-primary">Build Your Rig</a>
       <a href="contact.html" class="btn-secondary">Talk to Sales</a>
     </div>
@@ -166,8 +225,8 @@
     <h2>More Than a Cockpit—It’s a Movement</h2>
     <p>
       FluxFrame Pro fuses industrial-strength engineering with gamer-grade flair.
-      Whether you’re training pilots, testing autonomous vehicles, or streaming
-      sim-races, this modular powerhouse adapts instantly to your mission.
+      Whether you’re training pilots, testing autonomous vehicles, or streaming sim-races,
+      this modular powerhouse adapts instantly to your mission.
     </p>
   </section>
 
@@ -199,6 +258,95 @@
         <strong>Global Backbone:</strong> On-site setup, training & a 2-year ironclad warranty.
       </div>
     </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="body-block">
+    <h2>Instant Impact</h2>
+    <div class="stats-grid">
+      <div class="stat-item">
+        <h3>+35%</h3>
+        <p>Faster pilot certification</p>
+      </div>
+      <div class="stat-item">
+        <h3>0 ms</h3>
+        <p>Latency in controls</p>
+      </div>
+      <div class="stat-item">
+        <h3>270°</h3>
+        <p>Wrap-around ultrawide support</p>
+      </div>
+      <div class="stat-item">
+        <h3>4</h3>
+        <p>Snap-in mounting rails</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- KEY FEATURES -->
+  <section class="body-block">
+    <h2>Packed with Pro-Grade Features</h2>
+    <div class="feature-grid">
+      <div class="feature-card">
+        <h4>Zero-Flex Frame</h4>
+        <p>Engineered to 1 000 kg static load with absolute rigidity.</p>
+      </div>
+      <div class="feature-card">
+        <h4>Rapid Swap</h4>
+        <p>Switch from flight to racing in under 60 s—no tools.</p>
+      </div>
+      <div class="feature-card">
+        <h4>VR-Ready Pods</h4>
+        <p>Integrated mounts for perfect VR tracking.</p>
+      </div>
+      <div class="feature-card">
+        <h4>Cable Concierge</h4>
+        <p>Hidden channels keep wires tidy and out of sight.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- USE CASES -->
+  <section class="body-block">
+    <h2>Ideal Use Cases</h2>
+    <div class="use-case-grid">
+      <div class="use-case-card">
+        <h3>Pilot Academies</h3>
+        <p>Certification throughput +40% with real controls.</p>
+      </div>
+      <div class="use-case-card">
+        <h3>Auto R&D Labs</h3>
+        <p>Repeatable test rigs for driver studies.</p>
+      </div>
+      <div class="use-case-card">
+        <h3>eSports Legends</h3>
+        <p>Zero-latency mounts for split-second reactions.</p>
+      </div>
+      <div class="use-case-card">
+        <h3>Home Command Centers</h3>
+        <p>Pro-grade immersion in any living space.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="body-block testimonials">
+    <h2>Proof in the Pudding</h2>
+    <blockquote>
+      “FluxFrame Pro felt like an extension of my body—absolute immersion.”
+      <cite>— K. Nguyen, Pro Sim Racer</cite>
+    </blockquote>
+    <blockquote>
+      “Our trainees love the comfort; our engineers love the repeatability.”
+      <cite>— L. Carter, AeroTech Labs</cite>
+    </blockquote>
+  </section>
+
+  <!-- CTA FOOTER -->
+  <section class="cta-footer">
+    <h2>Ready to Own the Ultimate SimPit?</h2>
+    <a href="#configurator" class="btn-primary">Build Your Rig</a>
+    <a href="contact.html" class="btn-secondary">Talk to Sales</a>
   </section>
 
   <!-- FOOTER -->
