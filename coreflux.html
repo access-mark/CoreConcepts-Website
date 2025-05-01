@@ -7,12 +7,20 @@
   <title>FluxFrame Pro – The Ultimate Multi-Purpose SimPit</title>
   <link rel="stylesheet" href="assets/css/styles.css" />
   <style>
-    /* Banner styling (matches other pages) */
-    html, body { margin: 0; padding: 0; }
+    /* Reset & page background */
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: #000;
+      color: #eee;
+    }
+    /* Banner full-bleed with CoreFlux image */
     .banner-wrapper {
       position: relative;
-      left: 50%; right: 50%;
-      margin-left: -50vw; margin-right: -50vw;
+      left: 50%;
+      right: 50%;
+      margin-left: -50vw;
+      margin-right: -50vw;
       width: 100vw;
       height: clamp(250px, 40vh, 500px);
       overflow: hidden;
@@ -23,28 +31,41 @@
     }
     .banner-img {
       position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
       object-fit: cover;
       object-position: center;
       z-index: 0;
     }
     .banner-header,
     .page-title {
-      position: relative; z-index: 1;
+      position: relative;
+      z-index: 1;
       color: #fff;
       text-shadow: 0 0 10px rgba(0,0,0,0.8);
     }
-    .page-title { font-size: 3rem; margin: 0; }
-    .body-block { 
-      padding: 4rem 1rem; 
-      max-width: 1000px; 
-      margin: 0 auto; 
-      color: #eee; 
+    .page-title {
+      font-size: 3rem;
+      margin: 0;
+    }
+    /* Body blocks styling */
+    .body-block {
+      padding: 4rem 1rem;
+      max-width: 1000px;
+      margin: 0 auto;
       text-align: center;
     }
-    .body-block h2 { font-size: 2rem; margin-bottom: 1rem; }
-    .body-block p { margin-bottom: 1.5rem; line-height: 1.5; }
+    .body-block h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    .body-block p {
+      margin-bottom: 1.5rem;
+      line-height: 1.5;
+    }
+    /* Buttons */
     .btn-primary, .btn-secondary {
       display: inline-block;
       padding: 0.75rem 1.5rem;
@@ -54,34 +75,12 @@
       font-weight: bold;
     }
     .btn-primary {
-      background: #00FFFF; color: #000;
+      background: #00FFFF;
+      color: #000;
     }
     .btn-secondary {
-      background: #FFD700; color: #000;
-    }
-    .feature-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1.5rem;
-      margin-top: 2rem;
-    }
-    .feature-card {
-      background: rgba(255,255,255,0.05);
-      padding: 1.5rem;
-      border-radius: 0.5rem;
-      text-align: left;
-    }
-    .feature-card h3 { margin-top: 0; }
-    .specs-table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 2rem;
-    }
-    .specs-table th,
-    .specs-table td {
-      border: 1px solid rgba(255,255,255,0.1);
-      padding: 0.75rem;
-      text-align: left;
+      background: #FFD700;
+      color: #000;
     }
   </style>
 </head>
@@ -89,8 +88,8 @@
   <!-- Banner + navigation -->
   <div class="banner-wrapper">
     <img
-      src="assets/images/fluxframe-banner.jpg"
-      alt="FluxFrame Pro banner"
+      src="assets/images/coreflux-bannerimage.png"
+      alt="Sandton skyline at dusk"
       class="banner-img"
     />
     <header class="banner-header">
@@ -118,7 +117,7 @@
   <!-- Why section -->
   <section class="body-block">
     <h2>Why Choose FluxFrame Pro?</h2>
-    <ul style="list-style: none; padding: 0; text-align: left; max-width: 700px; margin: auto;">
+    <ul style="list-style: none; padding: 0; max-width: 700px; margin: auto; text-align:left;">
       <li><strong>Limitless Modularity:</strong> Snap-in mounts and universal rails let you swap devices without tools.</li>
       <li><strong>Ergonomic Precision:</strong> Fully adjustable seat, wheel & monitor positions for marathon comfort.</li>
       <li><strong>Immersive Display:</strong> Supports 4× curved ultrawides (270°+) plus overhead HUD.</li>
@@ -126,45 +125,9 @@
     </ul>
   </section>
 
-  <!-- Key Features -->
+  <!-- Call to Action -->
   <section class="body-block">
-    <h2>Key Features</h2>
-    <div class="feature-grid">
-      <div class="feature-card">
-        <h3>Universal Mounting</h3>
-        <p>Tool-free snap-in brackets for yokes, wheels, joysticks, and panels.</p>
-      </div>
-      <div class="feature-card">
-        <h3>Multi-Display Support</h3>
-        <p>Up to 4× VESA-mounted curved panels + overhead HUD mount.</p>
-      </div>
-      <div class="feature-card">
-        <h3>Motion & VR Ready</h3>
-        <p>Pre-wired ports for actuators, tracking sensors, and haptic devices.</p>
-      </div>
-      <div class="feature-card">
-        <h3>Cable Management</h3>
-        <p>Integrated channels and zip-tie rails keep everything neat.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Specs -->
-  <section class="body-block">
-    <h2>Technical Specifications</h2>
-    <table class="specs-table">
-      <tr><th>Frame</th><td>6061-T6 Extruded Aluminum</td></tr>
-      <tr><th>Capacity</th><td>1,000 kg (2,200 lbs) Static</td></tr>
-      <tr><th>Mounts</th><td>4× VESA 75/100 Rails + 1× HUD</td></tr>
-      <tr><th>Adjustments</th><td>Seat ±200 mm, Slide ±300 mm, Tilt ±15°</td></tr>
-      <tr><th>Connectivity</th><td>USB 3.1, CAT6, 12 V Daisy-Chain</td></tr>
-      <tr><th>Finish</th><td>Matte Black Powder Coat</td></tr>
-    </table>
-  </section>
-
-  <!-- Getting Started -->
-  <section class="body-block">
-    <h2>Getting Started</h2>
+    <h2>Getting Started Is Easy</h2>
     <p>1. Configure your kit in our 3D configurator.<br/>
        2. Receive a factory-tested assembly kit.<br/>
        3. Deploy with on-site setup and training.</p>
