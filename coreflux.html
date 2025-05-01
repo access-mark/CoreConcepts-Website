@@ -91,7 +91,7 @@
       margin-bottom: 0.75rem;
     }
 
-    /* ===== FRAMES AT 25rem ===== */
+    /* ===== FRAMES AT 25rem WITH PRESERVED ASPECT RATIO ===== */
     .framed-left,
     .framed-right {
       position: relative;
@@ -108,8 +108,10 @@
       top: 0; left: 0;
       width: 25rem;
       height: 100%;
-      background: url('assets/images/frame-left.png') no-repeat center;
-      background-size: 25rem 100%;
+      background-image: url('assets/images/frame-left.png');
+      background-repeat: no-repeat;
+      background-position: center top;
+      background-size: 25rem auto; /* preserve aspect ratio */
       z-index: 1;
     }
     .framed-right {
@@ -121,8 +123,10 @@
       top: 0; right: 0;
       width: 25rem;
       height: 100%;
-      background: url('assets/images/frame-right.png') no-repeat center;
-      background-size: 25rem 100%;
+      background-image: url('assets/images/frame-right.png');
+      background-repeat: no-repeat;
+      background-position: center top;
+      background-size: 25rem auto; /* preserve aspect ratio */
       z-index: 1;
     }
     .framed-left > *,
@@ -152,7 +156,7 @@
 </head>
 <body>
 
-  <!-- Banner -->
+  <!-- FULL-BLEED BANNER -->
   <div class="banner-wrapper">
     <img
       src="assets/images/coreflux-bannerimage.png"
@@ -178,7 +182,7 @@
     <h1 class="page-title">FluxFrame Pro</h1>
   </div>
 
-  <!-- Section with left frame -->
+  <!-- SECTION WITH LEFT FRAME -->
   <section class="framed-left">
     <h2>Executive Overview</h2>
     <p>
@@ -188,7 +192,7 @@
     </p>
   </section>
 
-  <!-- Section with right frame -->
+  <!-- SECTION WITH RIGHT FRAME -->
   <section class="framed-right">
     <h2>Service Breakdown</h2>
     <ul>
@@ -201,7 +205,7 @@
     </ul>
   </section>
 
-  <!-- Normal content -->
+  <!-- NORMAL CONTENT -->
   <section class="body-block">
     <h2>Key Features</h2>
     <p>…your other content here…</p>
@@ -209,7 +213,7 @@
     <a href="#configurator" class="btn-secondary">Design Your Rig</a>
   </section>
 
-  <!-- Footer -->
+  <!-- FOOTER -->
   <div id="site-footer"></div>
   <script>
     fetch("footer.html")
