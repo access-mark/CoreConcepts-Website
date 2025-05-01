@@ -7,23 +7,33 @@
   <title>CoreFlux – Real-Time Integration &amp; Data Orchestration</title>
   <link rel="stylesheet" href="assets/css/styles.css" />
   <style>
-    /* Banner wrapper and image styles */
+    /* 1. Reset any default margins so our banner can truly span the viewport */
+    html, body {
+      margin: 0;
+      padding: 0;
+    }
+    /* 2. Make the banner full-bleed at our clamp-based height */
     .banner-wrapper {
       position: relative;
-      width: 100%;
+      left: 50%;
+      right: 50%;
+      margin-left: -50vw;
+      margin-right: -50vw;
+      width: 100vw;
       height: clamp(250px, 40vh, 500px);
       overflow: hidden;
       display: flex;
       align-items: center;
       justify-content: center;
     }
+    /* 3. Have the image cover the entire wrapper (cropping as needed) */
     .banner-img {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      object-fit: contain;
+      object-fit: cover;
       object-position: center;
       z-index: 0;
     }
@@ -32,11 +42,11 @@
     .page-title {
       position: relative;
       z-index: 1;
+      color: #ffffff;
     }
   </style>
 </head>
 <body>
-  <!-- Banner + Header overlay with inline <img> -->
   <div class="banner-wrapper">
     <img
       src="assets/images/coreflux-bannerimage.png"
