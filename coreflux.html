@@ -1,100 +1,181 @@
-<!-- coreflux.html -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>CoreFlux – Real-Time Integration &amp; Data Orchestration</title>
-  <link rel="stylesheet" href="assets/css/styles.css" />
-  <style>
-    /* 1. Reset any default margins so our banner can truly span the viewport */
-    html, body {
-      margin: 0;
-      padding: 0;
-    }
-    /* 2. Make the banner full-bleed at our clamp-based height */
-    .banner-wrapper {
-      position: relative;
-      left: 50%;
-      right: 50%;
-      margin-left: -50vw;
-      margin-right: -50vw;
-      width: 100vw;
-      height: clamp(250px, 40vh, 500px);
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    /* 3. Have the image cover the entire wrapper (cropping as needed) */
-    .banner-img {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-      z-index: 0;
-    }
-    /* Ensure header and title sit above the image */
-    .banner-header,
-    .page-title {
-      position: relative;
-      z-index: 1;
-      color: #ffffff;
-    }
-  </style>
-</head>
-<body>
-  <div class="banner-wrapper">
-    <img
-      src="assets/images/coreflux-bannerimage.png"
-      alt="Sandton skyline at dusk"
-      class="banner-img"
-    />
-    <header class="banner-header">
-      <img src="assets/images/coreflux-logo.png" alt="CoreFlux Logo" class="logo" />
-      <nav>
-        <ul>
-          <li><a href="index.html" class="nav-btn">Home</a></li>
-          <li><a href="divisions.html" class="nav-btn">The Collective</a></li>
-          <li><a href="about.html" class="nav-btn active">About</a></li>
-          <li><a href="contact.html" class="nav-btn">Contact</a></li>
-          <li><a href="downloads.html" class="nav-btn btn-download">Downloads</a></li>
-        </ul>
-      </nav>
-    </header>
-    <h1 class="page-title">CoreFlux</h1>
+<!-- Hero Section -->
+<section id="hero" class="hero-block">
+  <div class="container">
+    <h1>FluxFrame Pro</h1>
+    <p class="subhead">
+      The Ultimate Multi-Purpose Simulation Cockpit<br/>
+      Fly. Race. Play. Work. All in one fully immersive platform.
+    </p>
+    <div class="cta-group">
+      <a href="#configurator" class="btn btn-primary">Design Your Rig</a>
+      <a href="#demo" class="btn btn-secondary">Request a Demo</a>
+    </div>
   </div>
+</section>
 
-  <!-- Executive Overview -->
-  <section class="body-block">
-    <h2>Orchestrate Your Data Flows in Real Time</h2>
-    <p>CoreFlux delivers seamless integration across your systems, ensuring data moves where it needs to go—instantly.</p>
-    <ul style="max-width:800px; margin:1rem auto 0; padding-left:1.5rem; text-align:left;">
-      <li><strong>100% Event-Driven Pipelines:</strong> Automate triggers and workflows across diverse platforms.</li>
-      <li><strong>Low-Latency Data Sync:</strong> Keep all your applications in lock-step with real-time updates.</li>
-      <li><strong>Scalable Microservices:</strong> Modular connectors to any API, on-prem or in the cloud.</li>
-      <li><strong>End-to-End Monitoring:</strong> Full visibility with built-in dashboards and alerting.</li>
-    </ul>
-  </section>
+<!-- Why FluxFrame Pro? -->
+<section id="why" class="info-block">
+  <div class="container two-col">
+    <div>
+      <h2>Why FluxFrame Pro?</h2>
+      <p>
+        FluxFrame Pro isn’t just a cockpit—it’s a universal platform engineered for professionals, enthusiasts, and enterprises.
+        From flight schools to eSports teams, our rugged, modular design adapts to every scenario.
+      </p>
+      <ul>
+        <li><strong>Limitless Modularity:</strong> Quick-release mounts, universal rails, and VESA adapters let you swap yokes, wheels, and displays in seconds.</li>
+        <li><strong>Ergonomic Mastery:</strong> Precision-adjustable rails and seat mounts ensure optimal posture and comfort, even through marathon sessions.</li>
+        <li><strong>Immersive Visualization:</strong> Supports up to four curved ultra-wide panels (270°+), VR bases, and motion actuators for next-level realism.</li>
+        <li><strong>Rock-Solid Stability:</strong> Heavy-gauge aluminum frame, rated to 1,000 kg, resists flex, vibration, and drift under any load.</li>
+      </ul>
+    </div>
+    <div>
+      <img src="assets/images/fluxframe-overview.jpg" alt="FluxFrame Pro in action"/>
+    </div>
+  </div>
+</section>
 
-  <!-- Call to Action -->
-  <section class="body-block">
-    <h2>Drive Seamless Operations</h2>
-    <p>Ready to connect your entire landscape without delay? CoreFlux is your integration engine.</p>
-    <a href="contact.html" class="btn-primary">Schedule an Integration Strategy Call</a>
-  </section>
+<!-- Key Features -->
+<section id="features" class="features-block">
+  <div class="container">
+    <h2>Key Features</h2>
+    <div class="feature-grid">
+      <div class="feature-card">
+        <h3>Universal Mounting</h3>
+        <p>Swap devices with our snap-in brackets—no tools required. Yokes, wheels, monitors, joysticks, or control panels.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Adjustable Ergonomics</h3>
+        <p>Fine-tune seat height, angle, and distance; tilt and rotate displays to match your line of sight.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Multi-Display Support</h3>
+        <p>Integrated curved-monitor arch holds up to 4× 34” ultrawides, plus overhead HUD mounts.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Motion & VR Ready</h3>
+        <p>Pre-wired ports for motion actuators, VR lighthouses, and haptic devices—just plug and play.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Cable Management</h3>
+        <p>Concealed channels and zip-tie rails keep cables tidy and out of sight for a pro-grade look.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Industrial Durability</h3>
+        <p>Powder-coated finish resists scuffs; marine-grade fasteners and brackets for 24/7 operation.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Open-Source Add-Ons</h3>
+        <p>Access our GitHub repository to design custom mounts and share community-built modules.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Global Support</h3>
+        <p>On-site assembly, training, and 2-year warranty with optional extended coverage in 50+ countries.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-  <!-- Footer -->
-  <div id="site-footer"></div>
-  <script>
-    fetch("footer.html")
-      .then(res => res.text())
-      .then(html => {
-        document.getElementById("site-footer").outerHTML = html;
-      });
-  </script>
-</body>
-</html>
+<!-- Technical Specifications -->
+<section id="specs" class="specs-block">
+  <div class="container">
+    <h2>Technical Specifications</h2>
+    <table class="specs-table">
+      <tr><th>Frame Material</th><td>6061-T6 Extruded Aluminum</td></tr>
+      <tr><th>Load Capacity</th><td>1,000 kg (2,200 lbs) Static</td></tr>
+      <tr><th>Monitor Mounts</th><td>4× VESA 75/100 Curved-Panel Rails + 1× HUD</td></tr>
+      <tr><th>Seat Adjustment</th><td>Height ±200 mm, Slide ±300 mm, Tilt ±15°</td></tr>
+      <tr><th>Connectivity</th><td>Integrated USB 3.1, CAT6, 12 V Power Daisy-Chain</td></tr>
+      <tr><th>Finish</th><td>Matte Black Powder Coat</td></tr>
+      <tr><th>Dimensions (L×W×H)</th><td>1,600 × 1,000 × 1,400 mm</td></tr>
+      <tr><th>Weight</th><td>45 kg (frame only)</td></tr>
+    </table>
+  </div>
+</section>
+
+<!-- Use Cases -->
+<section id="use-cases" class="cases-block">
+  <div class="container">
+    <h2>Ideal For</h2>
+    <div class="cases-grid">
+      <div class="case-card">
+        <h3>Flight Schools</h3>
+        <p>FAA-certified cockpit for pilot training, with real-world yokes and nav-comm panels.</p>
+      </div>
+      <div class="case-card">
+        <h3>Automotive R&D</h3>
+        <p>Vehicle prototyping and driver-behavior studies with programmable actuators.</p>
+      </div>
+      <div class="case-card">
+        <h3>eSports & Streaming</h3>
+        <p>Broadcast-ready rig with dynamic camera mounts and integrated audio panels.</p>
+      </div>
+      <div class="case-card">
+        <h3>Home Enthusiasts</h3>
+        <p>Premium build for flight simmers, sim-racers, and power-users at home.</p>
+      </div>
+      <div class="case-card">
+        <h3>Hybrid Workspaces</h3>
+        <p>Switch seamlessly between immersive play and productivity monitors.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section id="testimonials" class="testimonials-block">
+  <div class="container">
+    <h2>What Our Customers Say</h2>
+    <div class="quote-slider">
+      <blockquote>
+        “FluxFrame Pro gave our academy unmatched realism—no flex, zero downtime.”
+        <footer>— Capt. A. Petersen, AeroFlight Academy</footer>
+      </blockquote>
+      <blockquote>
+        “We saw a 30% improvement in lap consistency once we switched to FluxFrame’s modular design.”
+        <footer>— J. Morales, Velocity eSports</footer>
+      </blockquote>
+      <blockquote>
+        “Installation was a breeze, and their support team was onsite within 48 hours.”
+        <footer>— S. Kim, DriveTech R&D</footer>
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- How It Works -->
+<section id="how-it-works" class="steps-block">
+  <div class="container">
+    <h2>Getting Started Is Easy</h2>
+    <ol class="steps-list">
+      <li>
+        <h4>Configure</h4>
+        <p>Use our 3D configurator to choose frame size, mounts, and accessories.</p>
+      </li>
+      <li>
+        <h4>Order & Assemble</h4>
+        <p>Receive factory-tested kit with assembly guide and support hotline.</p>
+      </li>
+      <li>
+        <h4>Deploy & Train</h4>
+        <p>On-site setup, calibration, and user training available worldwide.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- Call to Action -->
+<section id="get-started" class="cta-block">
+  <div class="container centered">
+    <h2>Ready to Build Your Ultimate SimPit?</h2>
+    <a href="#configurator" class="btn btn-primary">Design Your Rig</a>
+    <a href="#contact" class="btn btn-secondary">Contact Sales</a>
+  </div>
+</section>
+
+<!-- Footer Teaser -->
+<footer class="footer-block">
+  <div class="container">
+    <p>&copy; 2025 FluxFrame Pro. All rights reserved. | <a href="#privacy">Privacy Policy</a> | <a href="#terms">Terms of Service</a></p>
+  </div>
+</footer>
