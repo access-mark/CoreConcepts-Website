@@ -14,37 +14,18 @@
       font-family: 'Segoe UI', sans-serif;
     }
     a { text-decoration: none; color: inherit; }
-    ul { margin: 0; padding: 0; list-style: none; }
+    ul, ol { margin: 0; padding: 0; list-style: none; }
 
     /* BUTTONS */
     .btn-primary, .btn-secondary {
       display: inline-block;
-      padding: .75rem 1.5rem; margin: .5rem;
-      border-radius: .5rem; font-weight: bold;
+      padding: .75rem 1.5rem;
+      margin: .5rem;
+      border-radius: .5rem;
+      font-weight: bold;
     }
     .btn-primary { background: #00FFFF; color: #000; }
     .btn-secondary { background: #FFD700; color: #000; }
-
-    /* BODY BLOCK – CENTERED TEXT */
-    .body-block {
-      max-width: 1000px; margin: 0 auto; padding: 3rem 1rem;
-      text-align: center;
-    }
-    .body-block h2 {
-      font-size: 2rem; margin-bottom: 1rem;
-      display: inline-block; position: relative;
-    }
-    .body-block h2::after {
-      content: ''; display: block; width: 50%; height: 4px;
-      background: #00FFFF; margin: .5rem auto 0;
-    }
-    .body-block p { line-height: 1.6; margin-bottom: 2rem; }
-    .body-block ul {
-      list-style: disc; margin: 0 auto 2rem;
-      padding-left: 1.5rem; display: inline-block;
-      text-align: left;
-    }
-    .body-block li { margin-bottom: .75rem; }
 
     /* HERO BANNER */
     .banner-wrapper {
@@ -61,8 +42,6 @@
       object-fit: cover; object-position: center;
       z-index: 0;
     }
-
-    /* COREFLUX LOGO + VERTICAL NAV ON BANNER */
     .banner-header {
       position: relative; z-index: 1;
       display: flex; align-items: flex-start;
@@ -81,8 +60,6 @@
     .banner-header .nav-btn.active {
       border-left: 4px solid #00FFFF; padding-left: .5rem;
     }
-
-    /* TITLE & CTA ON BANNER */
     .banner-content {
       position: relative; z-index: 1;
       text-align: center; color: #fff;
@@ -104,16 +81,48 @@
       transform: translateY(-2px); box-shadow: 0 0 12px #FFD700;
     }
 
+    /* BODY BLOCK – CENTERED TEXT */
+    .body-block {
+      max-width: 1000px; margin: 0 auto; padding: 3rem 1rem;
+      text-align: center;
+    }
+    .body-block h2 {
+      font-size: 2rem; margin-bottom: 1rem;
+      display: inline-block; position: relative;
+    }
+    .body-block h2::after {
+      content: ''; display: block; width: 50%; height: 4px;
+      background: #00FFFF; margin: .5rem auto 0;
+    }
+    .body-block p {
+      line-height: 1.6; margin-bottom: 2rem;
+    }
+
+    /* BREAKDOWN GRID */
+    .breakdown-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      margin: 2rem auto;
+      max-width: 800px;
+      text-align: left;
+    }
+    .breakdown-item {
+      background: #f9f9f9;
+      padding: 1rem;
+      border-radius: .5rem;
+      border: 2px solid #00FFFF;
+    }
+
     /* SERVICE BREAKDOWN IMAGES */
     .service-images {
-      display: flex; gap: 1rem;
-      justify-content: center; margin-bottom: 2rem;
+      display: flex; gap: 1rem; justify-content: center;
+      margin-bottom: 2rem;
     }
     .service-images img {
-      width: 25rem; height: 25rem;
-      object-fit: contain; border: 2px solid #00FFFF;
-      border-radius: .5rem; background: #f9f9f9;
-      transition: transform .2s;
+      width: 25rem; height: 25rem; object-fit: contain;
+      border: 2px solid #00FFFF; border-radius: .5rem;
+      background: #f9f9f9; transition: transform .2s;
     }
     .service-images img:hover {
       transform: scale(1.05);
@@ -126,7 +135,7 @@
   <div class="banner-wrapper">
     <img src="assets/images/coreflux-bannerimage.png" alt="FluxFrame Pro Banner" class="banner-img" />
 
-    <!-- CoreFlux Logo + Vertical Navigation -->
+    <!-- Logo + Vertical Navigation -->
     <div class="banner-header">
       <img src="assets/images/coreflux-logo.png" alt="CoreFlux Logo" class="coreflux-logo" />
       <nav>
@@ -170,22 +179,34 @@
     </div>
 
     <h2>Breakdown of Brilliance</h2>
-    <ul>
-      <li><strong>SnapLock Rails:</strong> Magnetic-fast clamps switch gear in 30 seconds.</li>
-      <li><strong>ErgoFit System:</strong> ±5 mm precision on seat, wheel & pedal mounts.</li>
-      <li><strong>Panoramic Vision:</strong> Four 34″ ultrawides for a 270° real-world wrap.</li>
-      <li><strong>Pro Cabling:</strong> Concealed channels for power, data & audio flawlessly.</li>
-      <li><strong>Instant VR & Motion:</strong> Pre-wired brackets for actuators & tracking sensors.</li>
-      <li><strong>Global Backbone:</strong> On-site setup, training & a 2-year ironclad warranty.</li>
-    </ul>
+    <div class="breakdown-grid">
+      <div class="breakdown-item">
+        <strong>SnapLock Rails:</strong> Magnetic-fast clamps switch gear in 30 seconds.
+      </div>
+      <div class="breakdown-item">
+        <strong>ErgoFit System:</strong> ±5 mm precision on seat, wheel & pedal mounts.
+      </div>
+      <div class="breakdown-item">
+        <strong>Panoramic Vision:</strong> Four 34″ ultrawides for a 270° real-world wrap.
+      </div>
+      <div class="breakdown-item">
+        <strong>Pro Cabling:</strong> Concealed channels for power, data & audio flawlessly.
+      </div>
+      <div class="breakdown-item">
+        <strong>Instant VR & Motion:</strong> Pre-wired brackets for actuators & tracking sensors.
+      </div>
+      <div class="breakdown-item">
+        <strong>Global Backbone:</strong> On-site setup, training & a 2-year ironclad warranty.
+      </div>
+    </div>
   </section>
 
   <!-- FOOTER -->
   <div id="site-footer"></div>
   <script>
-    fetch("footer.html")
-      .then(r => r.text())
-      .then(html => { document.getElementById("site-footer").outerHTML = html; });
+    fetch("footer.html").then(r => r.text()).then(html => {
+      document.getElementById("site-footer").outerHTML = html;
+    });
   </script>
 </body>
 </html>
