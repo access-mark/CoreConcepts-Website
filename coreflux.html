@@ -6,12 +6,10 @@
   <title>FluxFrame Pro – SimPit | CoreCloud</title>
   <link rel="stylesheet" href="assets/css/styles.css">
   <style>
-    /* ---------- PAGE RESET ---------- */
+    /* ---------- RESET ---------- */
     html, body {
-      margin: 0;
-      padding: 0;
-      background: #fff;
-      color: #000;
+      margin: 0; padding: 0;
+      background: #fff; color: #000;
       font-family: sans-serif;
     }
 
@@ -23,9 +21,7 @@
       width: 100vw;
       height: clamp(250px,40vh,500px);
       overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      display: flex; align-items: center; justify-content: center;
       background: #fff;
     }
     .banner-img {
@@ -34,9 +30,7 @@
       object-fit: cover; object-position: center;
       z-index: 0;
     }
-    .banner-header, .page-title {
-      position: relative; z-index: 1;
-    }
+    .banner-header, .page-title { position: relative; z-index:1; }
     .banner-header {
       display: flex; align-items: center; gap: 1.5rem;
     }
@@ -45,16 +39,9 @@
       list-style: none; margin: 0; padding: 0;
       display: flex; gap: 1rem;
     }
-    .banner-header .nav-btn {
-      text-decoration: none; color: #000; font-weight: 600;
-    }
-    .banner-header .nav-btn.active {
-      border-bottom: 2px solid #00FFFF;
-    }
-    .page-title {
-      font-size: 2.5rem;
-      margin: 0;
-    }
+    .nav-btn { text-decoration: none; color: #000; font-weight:600; }
+    .nav-btn.active { border-bottom: 2px solid #00FFFF; }
+    .page-title { font-size:2.5rem; margin:0; }
 
     /* ---------- BODY BLOCKS ---------- */
     .body-block {
@@ -67,53 +54,48 @@
       margin-bottom: 1rem;
     }
     .body-block p, .body-block ul {
-      margin-bottom: 1.5rem;
       line-height: 1.6;
+      margin-bottom: 1.5rem;
     }
-    .body-block ul {
-      padding-left: 1.5rem;
-    }
+    .body-block ul { padding-left:1.5rem; }
 
-    /* ---------- BIGGER FRAMES ---------- */
+    /* ---------- BIGGER (16rem) FRAMES ---------- */
     .framed-left,
     .framed-right {
       position: relative;
-      margin: 2rem 0;
+      margin: 2rem auto;   /* auto horizontal centers within max-width */
       background: #fff;
+      max-width: 1000px;    /* same as .body-block for centering */
     }
-    /* left-only frame */
     .framed-left {
-      padding: 2rem 1rem 2rem 8rem; /* left padding = frame width */
+      padding: 2rem 1rem 2rem 16rem; /* left padding = 16rem */
     }
     .framed-left::before {
       content: "";
       position: absolute;
       top: 0; left: 0;
-      width: 8rem;  /* bigger frame width */
+      width: 16rem;      /* double size */
       height: 100%;
       background: url('assets/images/frame-left.png') no-repeat center/contain;
       z-index: 1;
     }
 
-    /* right-only frame */
     .framed-right {
-      padding: 2rem 8rem 2rem 1rem; /* right padding = frame width */
+      padding: 2rem 16rem 2rem 1rem; /* right padding = 16rem */
     }
     .framed-right::after {
       content: "";
       position: absolute;
       top: 0; right: 0;
-      width: 8rem;  /* bigger frame width */
+      width: 16rem;      /* double size */
       height: 100%;
       background: url('assets/images/frame-right.png') no-repeat center/contain;
       z-index: 1;
     }
 
-    /* ensure text sits above frame */
-    .framed-left > *,
-    .framed-right > * {
-      position: relative;
-      z-index: 2;
+    /* Text above frames */
+    .framed-left > *, .framed-right > * {
+      position: relative; z-index: 2;
     }
 
     /* ---------- BUTTONS ---------- */
@@ -133,17 +115,9 @@
 
   <!-- FULL-BLEED BANNER -->
   <div class="banner-wrapper">
-    <img
-      src="assets/images/coreflux-bannerimage.png"
-      alt="FluxFrame Pro Banner"
-      class="banner-img"
-    />
+    <img src="assets/images/coreflux-bannerimage.png" alt="FluxFrame Pro Banner" class="banner-img">
     <header class="banner-header">
-      <img
-        src="assets/images/fluxframe-logo.png"
-        alt="FluxFrame Logo"
-        class="logo"
-      />
+      <img src="assets/images/fluxframe-logo.png" alt="FluxFrame Logo" class="logo">
       <nav>
         <ul>
           <li><a href="index.html" class="nav-btn">Home</a></li>
@@ -157,8 +131,8 @@
     <h1 class="page-title">FluxFrame Pro</h1>
   </div>
 
-  <!-- LEFT-FRAME SECTION -->
-  <section class="body-block framed-left">
+  <!-- SECTION WITH LEFT FRAME -->
+  <section class="framed-left">
     <h2>Executive Overview</h2>
     <p>
       FluxFrame Pro is the next-generation simulation cockpit for professionals,
@@ -167,8 +141,8 @@
     </p>
   </section>
 
-  <!-- RIGHT-FRAME SECTION -->
-  <section class="body-block framed-right">
+  <!-- SECTION WITH RIGHT FRAME -->
+  <section class="framed-right">
     <h2>Service Breakdown</h2>
     <ul>
       <li><strong>Modular Mounting:</strong> Quick-release rails for yokes, wheels, panels.</li>
@@ -180,7 +154,7 @@
     </ul>
   </section>
 
-  <!-- NORMAL SECTION -->
+  <!-- NORMAL CONTENT -->
   <section class="body-block">
     <h2>Key Features</h2>
     <p>…your other content here…</p>
