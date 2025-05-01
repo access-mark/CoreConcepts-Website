@@ -1,149 +1,110 @@
-<!-- fluxframe.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>FluxFrame Pro – Multi-Purpose SimPit | CoreCloud</title>
+  <title>FluxFrame Pro – SimPit | CoreCloud</title>
   <link rel="stylesheet" href="assets/css/styles.css" />
   <style>
-    /* ----- White-page theme ----- */
-    html, body {
-      margin: 0;
-      padding: 0;
-      background: #fff;
-      color: #000;
-      font-family: sans-serif;
-    }
-    a.nav-btn {
-      color: #000;
-    }
-    a.nav-btn.active {
-      border-bottom: 2px solid #00FFFF;
-    }
-    .btn-primary {
-      background: #00FFFF;
-      color: #000;
-    }
-    .btn-secondary {
-      background: #FFD700;
-      color: #000;
-    }
-
-    /* ----- Dynamic full-bleed banner ----- */
+    /* ===== page & banner styling (as before) ===== */
+    html, body { margin:0; padding:0; background:#fff; color:#000; }
     .banner-wrapper {
       position: relative;
-      left: 50%;
-      right: 50%;
-      margin-left: -50vw;
-      margin-right: -50vw;
-      width: 100vw;
-      height: clamp(250px, 40vh, 500px);
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: #fff;
+      left:50%; right:50%;
+      margin-left:-50vw; margin-right:-50vw;
+      width:100vw;
+      height:clamp(250px,40vh,500px);
+      overflow:hidden;
+      display:flex; align-items:center; justify-content:center;
     }
     .banner-img {
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      object-fit: cover;
-      object-position: center;
-      z-index: 0;
+      position:absolute; top:0; left:0;
+      width:100%; height:100%;
+      object-fit:cover; object-position:center;
+      z-index:0;
     }
-    .banner-header,
-    .page-title {
-      position: relative;
-      z-index: 1;
-      color: #000;
+    .banner-header, .page-title {
+      position:relative; z-index:1;
     }
     .banner-header {
-      display: flex;
-      align-items: center;
-      gap: 1.5rem;
+      display:flex; align-items:center; gap:1.5rem;
     }
-    .banner-header .logo {
-      height: 2.5rem;
-    }
+    .banner-header .logo { height:2.5rem; }
     .banner-header nav ul {
-      margin: 0; padding: 0;
-      list-style: none;
-      display: flex;
-      gap: 1rem;
+      list-style:none; margin:0; padding:0;
+      display:flex; gap:1rem;
     }
-    .page-title {
-      font-size: 2.5rem;
-      margin: 0;
+    .banner-header .nav-btn {
+      text-decoration:none; color:#000; font-weight:600;
     }
+    .banner-header .nav-btn.active {
+      border-bottom:2px solid #00FFFF;
+    }
+    .page-title { font-size:2.5rem; margin:0; }
 
-    /* ----- Page content blocks ----- */
+    /* ===== your framed‐section styles ===== */
     .body-block {
       max-width: 1000px;
       margin: 0 auto;
       padding: 3rem 1rem;
     }
-    .body-block h2 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
+
+    /* apply frames */
+    .framed {
+      position: relative;
+      padding: 2rem 4rem;   /* make room for frame graphics */
+      margin: 2rem 0;
+      background: #fff;
     }
-    .body-block p {
-      line-height: 1.6;
-      margin-bottom: 1.5rem;
+    .framed::before,
+    .framed::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      width: 4rem;         /* adjust to your frame-image width */
+      height: 100%;
+      background-repeat: no-repeat;
+      background-size: contain;
+      z-index: 1;
     }
-    .body-block ul {
-      padding-left: 1.5rem;
+    .framed::before {
+      left: 0;
+      background-image: url('assets/images/frame-left.png');
     }
-    .two-col {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
-      gap: 2rem;
-      align-items: start;
+    .framed::after {
+      right: 0;
+      background-image: url('assets/images/frame-right.png');
     }
-    .feature-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
-      gap: 1.5rem;
-      margin-top: 2rem;
+    /* ensure text sits above frame decor */
+    .framed > * {
+      position: relative;
+      z-index: 2;
     }
-    .feature-card {
-      background: #f9f9f9;
-      padding: 1.5rem;
-      border-radius: 0.5rem;
-      text-align: left;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+
+    /* buttons */
+    .btn-primary, .btn-secondary {
+      display:inline-block;
+      padding:.75rem 1.5rem;
+      margin:.5rem;
+      border-radius:.5rem;
+      text-decoration:none;
+      font-weight:bold;
     }
-    .specs-table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 1.5rem;
-    }
-    .specs-table th,
-    .specs-table td {
-      border: 1px solid #ddd;
-      padding: 0.75rem;
-      text-align: left;
-    }
-    .centered {
-      text-align: center;
-    }
+    .btn-primary { background:#00FFFF; color:#000; }
+    .btn-secondary { background:#FFD700; color:#000; }
   </style>
 </head>
 <body>
-  <!-- Banner -->
+
+  <!-- FULL-BLEED BANNER -->
   <div class="banner-wrapper">
     <img
       src="assets/images/coreflux-bannerimage.png"
-      alt="Sandton skyline at dusk"
+      alt="FluxFrame Pro Banner"
       class="banner-img"
     />
     <header class="banner-header">
-      <img
-        src="assets/images/fluxframe-logo.png"
-        alt="FluxFrame Pro Logo"
-        class="logo"
-      />
+      <img src="assets/images/fluxframe-logo.png" alt="FluxFrame Logo" class="logo" />
       <nav>
         <ul>
           <li><a href="index.html" class="nav-btn">Home</a></li>
@@ -157,93 +118,44 @@
     <h1 class="page-title">FluxFrame Pro</h1>
   </div>
 
-  <!-- Executive Overview -->
-  <section class="body-block">
+  <!-- FRAMED EXECUTIVE OVERVIEW -->
+  <section class="body-block framed">
     <h2>Executive Overview</h2>
     <p>
-      FluxFrame Pro is the next-generation sim cockpit for professionals,
+      FluxFrame Pro is the next-generation simulation cockpit for professionals,
       enterprises, and enthusiasts. With rock-solid stability, tool-free modularity,
       and full VR/motion readiness, it adapts instantly to training, R&D, eSports,
       and immersive workspaces.
     </p>
   </section>
 
-  <!-- Expanded Service Breakdown + Case Study -->
-  <section class="body-block two-col">
-    <div>
-      <h3>Expanded Service Breakdown</h3>
-      <ul>
-        <li><strong>Modular Mounting:</strong> Quick-release rails for yokes, wheels, panels.</li>
-        <li><strong>Ergonomic Precision:</strong> Seat ±200 mm, slide ±300 mm, tilt ±15°.</li>
-        <li><strong>Multi-Display:</strong> Up to 4× curved ultrawides + overhead HUD.</li>
-        <li><strong>Cable Management:</strong> Concealed channels keep cables tidy.</li>
-        <li><strong>VR & Motion:</strong> Pre-wired for actuators and haptic sensors.</li>
-        <li><strong>Industrial Strength:</strong> 1 000 kg-rated 6061-T6 aluminum frame.</li>
-      </ul>
-    </div>
-    <div>
-      <h3>Case Study: AeroFlight Academy</h3>
-      <p>
-        Integrating FluxFrame Pro into their FAA-certified simulators boosted trainee
-        performance by 25% and eliminated frame flex under extreme conditions.
-      </p>
-      <a href="case-studies/aeroflight.html" class="btn-primary">Read Full Case Study</a>
-    </div>
+  <!-- FRAMED SERVICE BREAKDOWN -->
+  <section class="body-block framed">
+    <h2>Service Breakdown</h2>
+    <ul>
+      <li><strong>Modular Mounting:</strong> Quick-release rails for yokes, wheels, panels.</li>
+      <li><strong>Ergonomic Precision:</strong> Seat ±200 mm, slide ±300 mm, tilt ±15°.</li>
+      <li><strong>Multi-Display:</strong> Up to 4× ultrawide panels + overhead HUD.</li>
+      <li><strong>Cable Management:</strong> Concealed channels keep cables tidy.</li>
+      <li><strong>VR & Motion:</strong> Pre-wired for actuators and haptic sensors.</li>
+      <li><strong>Industrial Strength:</strong> 1 000 kg-rated 6061-T6 aluminum frame.</li>
+    </ul>
   </section>
 
-  <!-- Key Features -->
+  <!-- NORMAL CONTENT (no frames) -->
   <section class="body-block">
     <h2>Key Features</h2>
-    <div class="feature-grid">
-      <div class="feature-card">
-        <h4>Universal Mounting</h4>
-        <p>Tool-free adapters for every cockpit device.</p>
-      </div>
-      <div class="feature-card">
-        <h4>Ultra-Wide Displays</h4>
-        <p>Supports 4× 34″ curved panels in a 270° field of view.</p>
-      </div>
-      <div class="feature-card">
-        <h4>Motion & VR Ready</h4>
-        <p>Seamless integration with actuators and VR sensors.</p>
-      </div>
-      <div class="feature-card">
-        <h4>Cable Routing</h4>
-        <p>Concealed channels keep your setup clean and professional.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Technical Specifications -->
-  <section class="body-block">
-    <h2>Technical Specifications</h2>
-    <table class="specs-table">
-      <tr><th>Frame Material</th><td>6061-T6 Aluminum</td></tr>
-      <tr><th>Load Capacity</th><td>1 000 kg static</td></tr>
-      <tr><th>Display Mounts</th><td>4× VESA Curved Rails + HUD</td></tr>
-      <tr><th>Seat Adjust</th><td>Seat ±200 mm, Slide ±300 mm, Tilt ±15°</td></tr>
-      <tr><th>Connectivity</th><td>USB 3.1, CAT6, 12 V daisy-chain</td></tr>
-      <tr><th>Finish</th><td>Matte Black Powder Coat</td></tr>
-      <tr><th>Dimensions</th><td>1600 × 1000 × 500 mm</td></tr>
-      <tr><th>Weight</th><td>45 kg (frame only)</td></tr>
-    </table>
-  </section>
-
-  <!-- Call to Action -->
-  <section class="body-block centered">
-    <h2>Ready to Elevate Your Simulation?</h2>
+    <!-- …etc… -->
     <a href="contact.html" class="btn-primary">Contact Us</a>
     <a href="#configurator" class="btn-secondary">Design Your Rig</a>
   </section>
 
-  <!-- Footer -->
+  <!-- FOOTER -->
   <div id="site-footer"></div>
   <script>
     fetch("footer.html")
-      .then(res => res.text())
-      .then(html => {
-        document.getElementById("site-footer").outerHTML = html;
-      });
+      .then(r => r.text())
+      .then(html => document.getElementById("site-footer").outerHTML = html);
   </script>
 </body>
 </html>
