@@ -193,4 +193,33 @@
           <li><strong>Ergonomic Precision:</strong> Seat ±200 mm, slide ±300 mm, tilt ±15°.</li>
           <li><strong>Multi-Display:</strong> Up to 4× ultrawide panels + overhead HUD.</li>
           <li><strong>Cable Management:</strong> Concealed channels keep cables tidy.</li>
-          <li><strong>VR &amp; Motion:</strong> Pre-wired for actuators
+          <li><strong>VR &amp; Motion:</strong> Pre-wired for actuators and haptic sensors.</li>
+          <li><strong>Industrial Strength:</strong> 1 000 kg-rated 6061-T6 aluminum frame.</li>
+        </ul>
+      </div>
+      <div class="service-images">
+        <img src="assets/images/extracted_page1_img7_clean2.png" alt="Rig Side View" />
+        <img src="assets/images/extracted_page1_img5_clean2.png" alt="Rig Top View" />
+      </div>
+    </div>
+  </section>
+
+  <!-- NORMAL CONTENT -->
+  <section class="body-block">
+    <h2>Key Features</h2>
+    <p>…your other content here…</p>
+    <a href="contact.html" class="btn-primary">Contact Us</a>
+    <a href="#configurator" class="btn-secondary">Design Your Rig</a>
+  </section>
+
+  <!-- FOOTER -->
+  <div id="site-footer"></div>
+  <script>
+    fetch("footer.html")
+      .then(r => r.text())
+      .then(html => {
+        document.getElementById("site-footer").outerHTML = html;
+      });
+  </script>
+</body>
+</html>
