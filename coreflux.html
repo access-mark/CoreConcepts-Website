@@ -27,88 +27,51 @@
     .btn-primary { background: #00FFFF; color: #000; }
     .btn-secondary { background: #FFD700; color: #000; }
 
-    /* BODY BLOCK – CENTERED TEXT */
-    .body-block {
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 3rem 1rem;
-      text-align: center;
-    }
-    .body-block h2 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-      display: inline-block;
-      position: relative;
-    }
-    .body-block h2::after {
-      content: '';
-      display: block;
-      width: 50%;
-      height: 4px;
-      background: #00FFFF;
-      margin: .5rem auto 0;
-    }
-    .body-block p {
-      line-height: 1.6;
-      margin-bottom: 2rem;
-    }
-    .body-block ul {
-      list-style: disc;
-      margin: 0 auto 2rem;
-      padding-left: 1.5rem;
-      display: inline-block;
-      text-align: left;
-    }
-    .body-block li { margin-bottom: .75rem; }
-
     /* HERO BANNER */
     .banner-wrapper {
-      position: relative;
-      left: 50%; right: 50%;
+      position: relative; left: 50%; right: 50%;
       margin-left: -50vw; margin-right: -50vw;
-      width: 100vw;
-      height: clamp(300px,45vh,550px);
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+      width: 100vw; height: clamp(300px,45vh,550px);
+      overflow: hidden; display: flex;
+      flex-direction: column; justify-content: space-between;
       background: #000;
     }
     .banner-img {
-      position: absolute;
-      top: 0; left: 0;
+      position: absolute; top: 0; left: 0;
       width: 100%; height: 100%;
       object-fit: cover; object-position: center;
       z-index: 0;
     }
 
-    /* COREFLUX LOGO + NAV ON BANNER */
+    /* COREFLUX LOGO + VERTICAL NAV ON BANNER */
     .banner-header {
       position: relative; z-index: 1;
-      display: flex; align-items: center; padding: 1rem 2rem;
+      display: flex; align-items: flex-start; padding: 1rem 2rem;
     }
     .banner-header .coreflux-logo {
-      height: 11.25rem; /* 450% of original 2.5rem */
+      height: 11.25rem;    /* 450% of original 2.5rem */
       margin-right: 2rem;
     }
     .banner-header nav {
       margin-left: auto;
     }
     .banner-header nav ul {
-      display: flex; gap: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
     }
     .banner-header .nav-btn {
-      color: #fff; font-weight: 600; padding-bottom: .25rem;
+      color: #fff; font-weight: 600; padding: .25rem 0;
     }
     .banner-header .nav-btn.active {
-      border-bottom: 2px solid #00FFFF;
+      border-left: 4px solid #00FFFF;
+      padding-left: .5rem;
     }
 
     /* TITLE & CTA ON BANNER */
     .banner-content {
       position: relative; z-index: 1;
-      text-align: center;
-      color: #fff;
+      text-align: center; color: #fff;
       padding: 0 1rem 3rem;
     }
     .banner-content h1 {
@@ -116,8 +79,7 @@
       text-shadow: 0 2px 8px rgba(0,0,0,0.8);
     }
     .banner-content p {
-      font-size: 1.25rem;
-      max-width: 600px;
+      font-size: 1.25rem; max-width: 600px;
       margin: 0 auto 2rem;
       text-shadow: 0 1px 4px rgba(0,0,0,0.8);
     }
@@ -136,10 +98,31 @@
       box-shadow: 0 0 12px #FFD700;
     }
 
+    /* BODY BLOCK – CENTERED TEXT */
+    .body-block {
+      max-width: 1000px; margin: 0 auto; padding: 3rem 1rem;
+      text-align: center;
+    }
+    .body-block h2 {
+      font-size: 2rem; margin-bottom: 1rem;
+      display: inline-block; position: relative;
+    }
+    .body-block h2::after {
+      content: ''; display: block; width: 50%; height: 4px;
+      background: #00FFFF; margin: .5rem auto 0;
+    }
+    .body-block p { line-height: 1.6; margin-bottom: 2rem; }
+    .body-block ul {
+      list-style: disc; margin: 0 auto 2rem;
+      padding-left: 1.5rem; display: inline-block;
+      text-align: left;
+    }
+    .body-block li { margin-bottom: .75rem; }
+
     /* SERVICE BREAKDOWN IMAGES */
     .service-images {
-      display: flex; gap: 1rem;
-      justify-content: center; margin-bottom: 2rem;
+      display: flex; gap: 1rem; justify-content: center;
+      margin-bottom: 2rem;
     }
     .service-images img {
       width: 25rem; height: 25rem; object-fit: contain;
@@ -161,7 +144,7 @@
       class="banner-img"
     />
 
-    <!-- CoreFlux Logo + Navigation -->
+    <!-- CoreFlux Logo + Vertical Navigation -->
     <div class="banner-header">
       <img
         src="assets/images/coreflux-logo.png"
@@ -210,7 +193,7 @@
     <h2>Breakdown of Brilliance</h2>
     <ul>
       <li><strong>SnapLock Rails:</strong> Magnetic-fast clamps switch gear in 30 seconds.</li>
-      <li><strong>ErgoFit System:</strong> ±5 mm precision on seat, wheel, and pedal mounts.</li>
+      <li><strong>ErgoFit System:</strong> ± 5 mm precision on seat, wheel & pedal mounts.</li>
       <li><strong>Panoramic Vision:</strong> Four 34″ ultrawides for a 270° real-world wrap.</li>
       <li><strong>Pro Cabling:</strong> Concealed channels for power, data & audio flawlessly.</li>
       <li><strong>Instant VR & Motion:</strong> Pre-wired brackets for actuators & tracking sensors.</li>
@@ -218,14 +201,101 @@
     </ul>
   </section>
 
+  <!-- STATS -->
+  <section class="body-block">
+    <h2>Instant Impact</h2>
+    <div class="stats-grid">
+      <div class="stat-item">
+        <h3>+35%</h3>
+        <p>Faster pilot certification</p>
+      </div>
+      <div class="stat-item">
+        <h3>0 ms</h3>
+        <p>Latency in your controls</p>
+      </div>
+      <div class="stat-item">
+        <h3>270°</h3>
+        <p>Wrap-around ultrawide support</p>
+      </div>
+      <div class="stat-item">
+        <h3>4</h3>
+        <p>Snap-in mounting rails</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- KEY FEATURES -->
+  <section class="body-block">
+    <h2>Packed with Pro-Grade Features</h2>
+    <div class="feature-grid">
+      <div class="feature-card">
+        <h4>Zero-Flex Frame</h4>
+        <p>Engineered to 1 000 kg static load with absolute rigidity.</p>
+      </div>
+      <div class="feature-card">
+        <h4>Rapid Swap</h4>
+        <p>Switch from flight to racing in under 60 s—no tools.</p>
+      </div>
+      <div class="feature-card">
+        <h4>VR-Ready Pods</h4>
+        <p>Integrated mounts for perfect virtual-reality tracking.</p>
+      </div>
+      <div class="feature-card">
+        <h4>Cable Concierge</h4>
+        <p>Tuck away wiring in hidden channels for a clutter-free cockpit.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- USE CASES -->
+  <section class="body-block">
+    <h2>Who’s Thriving on FluxFrame?</h2>
+    <div class="use-case-grid">
+      <div class="use-case-card">
+        <h3>Pilot Academies</h3>
+        <p>Certification throughput +40% with real-world controls.</p>
+      </div>
+      <div class="use-case-card">
+        <h3>Auto R&D Labs</h3>
+        <p>Repeatable, precise test rigs for driver studies.</p>
+      </div>
+      <div class="use-case-card">
+        <h3>eSports Legends</h3>
+        <p>Zero-latency mounts for split-second reactions.</p>
+      </div>
+      <div class="use-case-card">
+        <h3>Home Command Centers</h3>
+        <p>Pro-grade immersion in any living room or office.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="body-block testimonials">
+    <h2>Proof in the Pudding</h2>
+    <blockquote>
+      “FluxFrame Pro felt like an extension of my body—absolute immersion.”
+      <cite>— K. Nguyen, Pro Sim Racer</cite>
+    </blockquote>
+    <blockquote>
+      “Our trainees love the comfort; our engineers love the repeatability.”
+      <cite>— L. Carter, AeroTech Labs</cite>
+    </blockquote>
+  </section>
+
+  <!-- CTA FOOTER -->
+  <section class="cta-footer">
+    <h2>Ready to Own the Ultimate SimPit?</h2>
+    <a href="#configurator" class="btn-primary">Build Your Rig</a>
+    <a href="contact.html" class="btn-secondary">Talk to Sales</a>
+  </section>
+
   <!-- FOOTER -->
   <div id="site-footer"></div>
   <script>
     fetch("footer.html")
       .then(r => r.text())
-      .then(html => {
-        document.getElementById("site-footer").outerHTML = html;
-      });
+      .then(html => { document.getElementById("site-footer").outerHTML = html; });
   </script>
 </body>
 </html>
