@@ -15,7 +15,7 @@
     }
     a { text-decoration: none; }
 
-    /* BANNER */
+    /* FULL-BLEED BANNER */
     .banner-wrapper {
       position: relative; left: 50%; right: 50%;
       margin-left: -50vw; margin-right: -50vw;
@@ -29,7 +29,9 @@
       object-fit: cover; object-position: center;
       z-index:0;
     }
-    .banner-header, .page-title { position: relative; z-index:1; }
+    .banner-header, .page-title {
+      position: relative; z-index:1;
+    }
     .banner-header {
       display: flex; align-items: center; gap: 1.5rem;
     }
@@ -48,7 +50,7 @@
       font-size:2.5rem; margin:0;
     }
 
-    /* BODY BLOCKS */
+    /* BODY-BLOCK LAYOUT */
     .body-block {
       max-width:1000px; margin:0 auto; padding:3rem 1rem;
     }
@@ -61,27 +63,72 @@
     .body-block ul { padding-left:1.5rem; }
     .body-block li { margin-bottom:.75rem; }
 
-    /* CENTERING SERVICE BREAKDOWN */
-    .centered {
-      text-align: center;
-    }
-    .service-content {
-      max-width: 600px;
-      margin: 0 auto;
-    }
-    .service-content ul {
-      display: inline-block;
-      text-align: left;
-      padding-left: 1.5rem;
-    }
-
     /* SERVICE BREAKDOWN IMAGES */
     .service-images {
-      display: flex; gap:1rem;
-      justify-content: center; margin-bottom:2rem;
+      display:flex; gap:1rem;
+      justify-content:center; margin-bottom:2rem;
     }
     .service-images img {
       width:25rem; height:auto; object-fit:contain;
+    }
+
+    /* KEY FEATURES GRID */
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .feature-card {
+      background: rgba(0,255,255,0.05);
+      padding: 1.5rem; border-radius: 0.5rem;
+      text-align: left;
+    }
+
+    /* USE CASES GRID */
+    .use-case-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .use-case-card {
+      background: rgba(0,255,255,0.05);
+      padding: 1.5rem; border-radius: 0.5rem;
+      text-align: center;
+    }
+
+    /* TECH SPECS TABLE */
+    .specs-table {
+      width:100%; border-collapse: collapse; margin-top:1.5rem;
+    }
+    .specs-table th, .specs-table td {
+      border:1px solid #ddd; padding:0.75rem; text-align:left;
+    }
+
+    /* STEPS LIST */
+    .steps-list {
+      text-align: left; margin:1rem auto 0; max-width:600px;
+    }
+    .steps-list li {
+      margin-bottom:0.75rem;
+    }
+
+    /* TESTIMONIALS */
+    blockquote {
+      background: rgba(0,255,255,0.05);
+      border-left: 4px solid #00FFFF;
+      margin: 2rem auto;
+      padding: 1.5rem;
+      max-width: 600px;
+      font-style: italic;
+    }
+    blockquote cite {
+      display: block;
+      margin-top: 1rem;
+      text-align: right;
+      font-style: normal;
+      font-weight: bold;
     }
 
     /* BUTTONS */
@@ -91,23 +138,18 @@
     }
     .btn-primary { background:#00FFFF; color:#000; }
     .btn-secondary { background:#FFD700; color:#000; }
+
+    /* CENTERED TEXT */
+    .centered { text-align: center; }
   </style>
 </head>
 <body>
 
-  <!-- FULL-BLEED BANNER -->
+  <!-- BANNER -->
   <div class="banner-wrapper">
-    <img
-      src="assets/images/coreflux-bannerimage.png"
-      alt="FluxFrame Pro Banner"
-      class="banner-img"
-    />
+    <img src="assets/images/coreflux-bannerimage.png" alt="FluxFrame Pro Banner" class="banner-img" />
     <header class="banner-header">
-      <img
-        src="assets/images/fluxframe-logo.png"
-        alt="FluxFrame Logo"
-        class="logo"
-      />
+      <img src="assets/images/fluxframe-logo.png" alt="FluxFrame Logo" class="logo" />
       <nav>
         <ul>
           <li><a href="index.html" class="nav-btn">Home</a></li>
@@ -125,38 +167,117 @@
   <section class="body-block">
     <h2>Executive Overview</h2>
     <p>
-      FluxFrame Pro is the next‐generation simulation cockpit for professionals,
-      enterprises, and enthusiasts. With rock‐solid stability and tool‐free
-      modularity, it adapts instantly to training, R&amp;D, eSports, and immersive
-      workspaces.
+      FluxFrame Pro is the next-generation simulation cockpit for professionals,
+      enterprises, and enthusiasts. With rock-solid stability and tool-free modularity,
+      it adapts instantly to training, R&amp;D, eSports, and immersive workspaces.
     </p>
   </section>
 
-  <!-- SERVICE BREAKDOWN: IMAGES + CENTERED TEXT -->
+  <!-- SERVICE BREAKDOWN -->
   <section class="body-block centered">
     <div class="service-images">
       <img src="assets/images/rig-side.png" alt="Rig Side View" />
       <img src="assets/images/rig-top.png" alt="Rig Top View" />
     </div>
-    <div class="service-content">
-      <h2>Service Breakdown</h2>
-      <ul>
-        <li><strong>Modular Mounting:</strong> Quick‐release rails for yokes, wheels, panels.</li>
-        <li><strong>Ergonomic Precision:</strong> Seat ±200 mm, slide ±300 mm, tilt ±15°.</li>
-        <li><strong>Multi‐Display:</strong> Up to 4× ultrawide panels + overhead HUD.</li>
-        <li><strong>Cable Management:</strong> Concealed channels keep cables tidy.</li>
-        <li><strong>VR & Motion:</strong> Pre‐wired for actuators and haptic sensors.</li>
-        <li><strong>Industrial Strength:</strong> 1 000 kg‐rated 6061‐T6 aluminum frame.</li>
-      </ul>
-    </div>
+    <h2>Service Breakdown</h2>
+    <ul>
+      <li><strong>Modular Mounting:</strong> Quick-release rails for yokes, wheels, panels.</li>
+      <li><strong>Ergonomic Precision:</strong> Seat ±200 mm, slide ±300 mm, tilt ±15°.</li>
+      <li><strong>Multi-Display:</strong> Up to 4× ultrawide panels + overhead HUD.</li>
+      <li><strong>Cable Management:</strong> Concealed channels keep cables tidy.</li>
+      <li><strong>VR & Motion:</strong> Pre-wired for actuators and haptic sensors.</li>
+      <li><strong>Industrial Strength:</strong> 1 000 kg-rated 6061-T6 aluminum frame.</li>
+    </ul>
   </section>
 
   <!-- KEY FEATURES -->
   <section class="body-block">
     <h2>Key Features</h2>
-    <p>…your other content here…</p>
-    <a href="contact.html" class="btn-primary">Contact Us</a>
-    <a href="#configurator" class="btn-secondary">Design Your Rig</a>
+    <div class="feature-grid">
+      <div class="feature-card">
+        <h4>Universal Mounting</h4>
+        <p>Tool-free adapters for every cockpit device.</p>
+      </div>
+      <div class="feature-card">
+        <h4>Ultra-Wide Displays</h4>
+        <p>Supports 4× 34″ curved panels in a 270° field of view.</p>
+      </div>
+      <div class="feature-card">
+        <h4>Motion &amp; VR Ready</h4>
+        <p>Seamless integration with actuators and VR sensors.</p>
+      </div>
+      <div class="feature-card">
+        <h4>Cable Routing</h4>
+        <p>Concealed channels keep your setup clean and professional.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- IDEAL USE CASES -->
+  <section class="body-block">
+    <h2>Ideal Use Cases</h2>
+    <div class="use-case-grid">
+      <div class="use-case-card">
+        <h3>Flight Schools</h3>
+        <p>FAA-certified training with real yoke and throttle controls.</p>
+      </div>
+      <div class="use-case-card">
+        <h3>Automotive R&D</h3>
+        <p>Vehicle prototyping and driver behavior studies.</p>
+      </div>
+      <div class="use-case-card">
+        <h3>eSports & Streaming</h3>
+        <p>Broadcast-ready immersion for competitive gaming.</p>
+      </div>
+      <div class="use-case-card">
+        <h3>Home Enthusiasts</h3>
+        <p>Pro-grade sim cockpit in your living room or office.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TECHNICAL SPECIFICATIONS -->
+  <section class="body-block">
+    <h2>Technical Specifications</h2>
+    <table class="specs-table">
+      <tr><th>Frame Material</th><td>6061-T6 Extruded Aluminum</td></tr>
+      <tr><th>Load Capacity</th><td>1 000 kg (2 200 lbs) static</td></tr>
+      <tr><th>Display Mounts</th><td>4× VESA curved rails + overhead HUD</td></tr>
+      <tr><th>Seat Adjustment</th><td>Height ±200 mm, Slide ±300 mm, Tilt ±15°</td></tr>
+      <tr><th>Connectivity</th><td>USB 3.1, CAT6, 12 V daisy-chain power</td></tr>
+      <tr><th>Dimensions (L×W×H)</th><td>1600×1000×1400 mm</td></tr>
+      <tr><th>Weight</th><td>45 kg (frame only)</td></tr>
+    </table>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="body-block">
+    <h2>How It Works</h2>
+    <ol class="steps-list">
+      <li><strong>Configure:</strong> Choose frame, mounts, and accessories in our 3D configurator.</li>
+      <li><strong>Build:</strong> Receive a pre-tested kit with easy-follow assembly guides.</li>
+      <li><strong>Deploy:</strong> Assemble in minutes and start simulating immediately.</li>
+    </ol>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="body-block centered">
+    <h2>What Our Customers Say</h2>
+    <blockquote>
+      “FluxFrame Pro transformed our training—no flex, total immersion.”
+      <cite>— Capt. A. Petersen, AeroFlight Academy</cite>
+    </blockquote>
+    <blockquote>
+      “Our lap times improved by 20% once we switched to FluxFrame’s modular design.”
+      <cite>— J. Morales, Velocity eSports</cite>
+    </blockquote>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="body-block centered">
+    <h2>Ready to Build Your SimPit?</h2>
+    <a href="#configurator" class="btn-primary">Configure Now</a>
+    <a href="contact.html" class="btn-secondary">Contact Sales</a>
   </section>
 
   <!-- FOOTER -->
