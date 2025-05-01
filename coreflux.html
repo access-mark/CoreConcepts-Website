@@ -18,11 +18,8 @@
 
     /* BUTTONS */
     .btn-primary, .btn-secondary {
-      display: inline-block;
-      padding: .75rem 1.5rem;
-      margin: .5rem;
-      border-radius: .5rem;
-      font-weight: bold;
+      display: inline-block; padding: .75rem 1.5rem; margin: .5rem;
+      border-radius: .5rem; font-weight: bold;
       transition: transform .2s, box-shadow .2s;
     }
     .btn-primary { background: #00FFFF; color: #000; }
@@ -114,16 +111,17 @@
       border-radius:.5rem; border:2px solid #00FFFF;
     }
 
-    /* CARD GRID (features & use-cases) */
+    /* CARD GRID (features & use cases & stats) */
     .card-grid {
       display:grid;
       grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
       gap:1.5rem; margin-top:2rem;
+      text-align:left;
     }
     .card {
       background:rgba(0,255,255,0.05);
       padding:1.5rem; border-radius:.5rem;
-      text-align:left; transition:transform .2s,box-shadow .2s;
+      transition:transform .2s,box-shadow .2s;
     }
     .card:hover {
       transform:translateY(-4px);
@@ -212,11 +210,11 @@
   <!-- INSTANT IMPACT -->
   <section class="body-block">
     <h2>Instant Impact</h2>
-    <div class="stats-grid">
-      <div class="stat-item"><h3>+35%</h3><p>Faster pilot certification</p></div>
-      <div class="stat-item"><h3>0 ms</h3><p>Latency in controls</p></div>
-      <div class="stat-item"><h3>270°</h3><p>Wrap-around ultrawide support</p></div>
-      <div class="stat-item"><h3>4</h3><p>Snap-in mounting rails</p></div>
+    <div class="card-grid">
+      <div class="card"><h3>+35%</h3><p>Faster pilot certification</p></div>
+      <div class="card"><h3>0 ms</h3><p>Latency in controls</p></div>
+      <div class="card"><h3>270°</h3><p>Wrap-around ultrawide support</p></div>
+      <div class="card"><h3>4</h3><p>Snap-in mounting rails</p></div>
     </div>
   </section>
 
@@ -235,7 +233,7 @@
   <section class="body-block">
     <h2>Ideal Use Cases</h2>
     <div class="card-grid">
-      <div class="card"><h3>Pilot Academies</h3><p>Certification throughput +40% with real-world controls.</p></div>
+      <div class="card"><h3>Pilot Academies</h3><p>Certification throughput +40 % with real controls.</p></div>
       <div class="card"><h3>Auto R&D Labs</h3><p>Repeatable test rigs for driver-behavior studies.</p></div>
       <div class="card"><h3>eSports Legends</h3><p>Zero-latency mounts for split-second reactions.</p></div>
       <div class="card"><h3>Home Command</h3><p>Pro-grade immersion in any living space.</p></div>
@@ -261,7 +259,7 @@
   <script>
     fetch("footer.html")
       .then(r => r.text())
-      .then(html => document.getElementById("site-footer").outerHTML = html);
+      .then(html => { document.getElementById("site-footer").outerHTML = html; });
   </script>
 </body>
 </html>
