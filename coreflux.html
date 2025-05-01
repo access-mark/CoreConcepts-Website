@@ -1,97 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>FluxFrame Pro – SimPit | CoreCloud</title>
-  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="stylesheet" href="assets/css/styles.css">
   <style>
-    /* ===== page & banner styling (as before) ===== */
-    html, body { margin:0; padding:0; background:#fff; color:#000; }
+    /* ---------- PAGE RESET ---------- */
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: #fff;
+      color: #000;
+      font-family: sans-serif;
+    }
+
+    /* ---------- BANNER ---------- */
     .banner-wrapper {
       position: relative;
-      left:50%; right:50%;
-      margin-left:-50vw; margin-right:-50vw;
-      width:100vw;
-      height:clamp(250px,40vh,500px);
-      overflow:hidden;
-      display:flex; align-items:center; justify-content:center;
+      left: 50%; right: 50%;
+      margin-left: -50vw; margin-right: -50vw;
+      width: 100vw;
+      height: clamp(250px,40vh,500px);
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #fff;
     }
     .banner-img {
-      position:absolute; top:0; left:0;
-      width:100%; height:100%;
-      object-fit:cover; object-position:center;
-      z-index:0;
+      position: absolute; top: 0; left: 0;
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: center;
+      z-index: 0;
     }
     .banner-header, .page-title {
-      position:relative; z-index:1;
+      position: relative; z-index: 1;
     }
     .banner-header {
-      display:flex; align-items:center; gap:1.5rem;
+      display: flex; align-items: center; gap: 1.5rem;
     }
-    .banner-header .logo { height:2.5rem; }
+    .banner-header .logo { height: 2.5rem; }
     .banner-header nav ul {
-      list-style:none; margin:0; padding:0;
-      display:flex; gap:1rem;
+      list-style: none; margin: 0; padding: 0;
+      display: flex; gap: 1rem;
     }
     .banner-header .nav-btn {
-      text-decoration:none; color:#000; font-weight:600;
+      text-decoration: none; color: #000; font-weight: 600;
     }
     .banner-header .nav-btn.active {
-      border-bottom:2px solid #00FFFF;
+      border-bottom: 2px solid #00FFFF;
     }
-    .page-title { font-size:2.5rem; margin:0; }
+    .page-title {
+      font-size: 2.5rem;
+      margin: 0;
+    }
 
-    /* ===== your framed‐section styles ===== */
+    /* ---------- BODY BLOCKS ---------- */
     .body-block {
       max-width: 1000px;
       margin: 0 auto;
       padding: 3rem 1rem;
     }
+    .body-block h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    .body-block p, .body-block ul {
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+    }
+    .body-block ul {
+      padding-left: 1.5rem;
+    }
 
-    /* apply frames */
-    .framed {
+    /* ---------- BIGGER FRAMES ---------- */
+    .framed-left,
+    .framed-right {
       position: relative;
-      padding: 2rem 4rem;   /* make room for frame graphics */
       margin: 2rem 0;
       background: #fff;
     }
-    .framed::before,
-    .framed::after {
+    /* left-only frame */
+    .framed-left {
+      padding: 2rem 1rem 2rem 8rem; /* left padding = frame width */
+    }
+    .framed-left::before {
       content: "";
       position: absolute;
-      top: 0;
-      width: 4rem;         /* adjust to your frame-image width */
+      top: 0; left: 0;
+      width: 8rem;  /* bigger frame width */
       height: 100%;
-      background-repeat: no-repeat;
-      background-size: contain;
+      background: url('assets/images/frame-left.png') no-repeat center/contain;
       z-index: 1;
     }
-    .framed::before {
-      left: 0;
-      background-image: url('assets/images/frame-left.png');
+
+    /* right-only frame */
+    .framed-right {
+      padding: 2rem 8rem 2rem 1rem; /* right padding = frame width */
     }
-    .framed::after {
-      right: 0;
-      background-image: url('assets/images/frame-right.png');
+    .framed-right::after {
+      content: "";
+      position: absolute;
+      top: 0; right: 0;
+      width: 8rem;  /* bigger frame width */
+      height: 100%;
+      background: url('assets/images/frame-right.png') no-repeat center/contain;
+      z-index: 1;
     }
-    /* ensure text sits above frame decor */
-    .framed > * {
+
+    /* ensure text sits above frame */
+    .framed-left > *,
+    .framed-right > * {
       position: relative;
       z-index: 2;
     }
 
-    /* buttons */
+    /* ---------- BUTTONS ---------- */
     .btn-primary, .btn-secondary {
-      display:inline-block;
-      padding:.75rem 1.5rem;
-      margin:.5rem;
-      border-radius:.5rem;
-      text-decoration:none;
-      font-weight:bold;
+      display: inline-block;
+      padding: .75rem 1.5rem;
+      margin: .5rem;
+      border-radius: .5rem;
+      font-weight: bold;
+      text-decoration: none;
     }
-    .btn-primary { background:#00FFFF; color:#000; }
-    .btn-secondary { background:#FFD700; color:#000; }
+    .btn-primary { background: #00FFFF; color: #000; }
+    .btn-secondary { background: #FFD700; color: #000; }
   </style>
 </head>
 <body>
@@ -104,7 +139,11 @@
       class="banner-img"
     />
     <header class="banner-header">
-      <img src="assets/images/fluxframe-logo.png" alt="FluxFrame Logo" class="logo" />
+      <img
+        src="assets/images/fluxframe-logo.png"
+        alt="FluxFrame Logo"
+        class="logo"
+      />
       <nav>
         <ul>
           <li><a href="index.html" class="nav-btn">Home</a></li>
@@ -118,19 +157,18 @@
     <h1 class="page-title">FluxFrame Pro</h1>
   </div>
 
-  <!-- FRAMED EXECUTIVE OVERVIEW -->
-  <section class="body-block framed">
+  <!-- LEFT-FRAME SECTION -->
+  <section class="body-block framed-left">
     <h2>Executive Overview</h2>
     <p>
       FluxFrame Pro is the next-generation simulation cockpit for professionals,
-      enterprises, and enthusiasts. With rock-solid stability, tool-free modularity,
-      and full VR/motion readiness, it adapts instantly to training, R&D, eSports,
-      and immersive workspaces.
+      enterprises, and enthusiasts. With rock-solid stability and tool-free modularity,
+      it adapts instantly to training, R&D, eSports, and immersive workspaces.
     </p>
   </section>
 
-  <!-- FRAMED SERVICE BREAKDOWN -->
-  <section class="body-block framed">
+  <!-- RIGHT-FRAME SECTION -->
+  <section class="body-block framed-right">
     <h2>Service Breakdown</h2>
     <ul>
       <li><strong>Modular Mounting:</strong> Quick-release rails for yokes, wheels, panels.</li>
@@ -142,10 +180,10 @@
     </ul>
   </section>
 
-  <!-- NORMAL CONTENT (no frames) -->
+  <!-- NORMAL SECTION -->
   <section class="body-block">
     <h2>Key Features</h2>
-    <!-- …etc… -->
+    <p>…your other content here…</p>
     <a href="contact.html" class="btn-primary">Contact Us</a>
     <a href="#configurator" class="btn-secondary">Design Your Rig</a>
   </section>
